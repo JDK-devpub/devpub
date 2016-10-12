@@ -71,11 +71,6 @@
           </div>
 
         </div>
-
-
-<<<<<<< HEAD
-
-
         <div class="android-wear-section">
           <div class="android-wear-band">
             <div class="android-wear-band-text">
@@ -285,12 +280,5 @@
     <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
   </body>
 </html>
-=======
-    Country<input type ="text" name ="country" required/><br>
-    Type<input type ="text" name ="mode" required/><br>
-    Gender<input type ="text" name ="gender" required/><br>
-    <input type="submit" name="submit" value="Register" required />
-  </form>
 </body>
 </html>
->>>>>>> origin/master
