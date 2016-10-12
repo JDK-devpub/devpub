@@ -162,14 +162,14 @@ span.psw {
           <!-- Navigation -->
           <div class="android-navigation-container">
             <nav class="android-navigation mdl-navigation">
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">SignUp</a>
-          <!--  <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> -->
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#id02" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">SignUp</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#id01" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Jobs</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">News</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Market</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Notification</a>
             </nav>
+
           </div>
               <!-- Login pop up -->
               <div id="id01" class="modal">
@@ -188,19 +188,11 @@ span.psw {
                       </div>
 
                       <div class="container" style="background-color:#f1f1f1">
-                        <button type="button" onclick="document.getElementById('id01').style.display='none'"      class="cancelbtn">Cancel</button>
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
                         <span class="psw">Forgot <a href="#">password?</a></span>
                       </div>
                     </form>
-                  </div>
-
-                      <span class="android-mobile-title mdl-layout-title">
-                        <img class="android-logo-image" src="images/android-logo.png">
-                      </span>
-                    </div>
-                  </div>
-
-    
+               </div>
 
                   <script>
                   // Get the modal
@@ -213,6 +205,49 @@ span.psw {
                       }
                   }
                   </script>
+
+                   <div id="id02" class="modal">
+              
+                    <form class="modal-content animate">
+
+                      <div class="container">
+                        <label><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="uname" required>
+
+                        <label><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" required>
+                          
+                        <button type="submit">Login</button>
+                        <input type="checkbox" checked="checked"> Remember me
+                      </div>
+
+                      <div class="container" style="background-color:#f1f1f1">
+                        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                        <span class="psw">Forgot <a href="#">password?</a></span>
+                      </div>
+                    </form>
+               </div>
+
+                  <script>
+                  // Get the modal
+                  var modal = document.getElementById('id02');
+
+                  // When the user clicks anywhere outside of the modal, close it
+                  window.onclick = function(event) {
+                      if (event.target == modal) {
+                          modal.style.display = "none";
+                      }
+                  }
+                  </script>
+
+
+
+         <span class="android-mobile-title mdl-layout-title">
+                        <img class="android-logo-image" src="images/android-logo.png">
+                      </span>
+                    </div>
+                  </div>
+
 
       <div class="android-content mdl-layout__content">
         <a name="top"></a>
