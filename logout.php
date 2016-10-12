@@ -1,5 +1,6 @@
 <?php
-
+//Version 1.0
+//Session destroy
 	echo "Logged out scuccessfully";
 
   session_start();

@@ -1,4 +1,7 @@
 <?php
+//Version 1.0
+//Session ID check
+//User profile 
 	session_start();
 	if($_SESSION['sid']==session_id())
 	{

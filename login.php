@@ -1,4 +1,6 @@
 <?php
+//Version 1.0
+//Login for User
     session_start();
     include ("dbconfig.php");
 

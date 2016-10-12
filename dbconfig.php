@@ -1,4 +1,6 @@
 <?php
+//Version 1.0
+//Database configuration
 $host = 'localhost';
 $username = 'root';
 $password = '';

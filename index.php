@@ -1,4 +1,8 @@
 <?php
+//Version 1.0
+//Session check and database works
+//Database INSERT
+//First page
     session_start();
     include ("dbconfig.php");
     $msg = "";
