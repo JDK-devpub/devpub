@@ -14,7 +14,7 @@ GitHub Authority
 ********************************
 Roles in Project
 --------------------------------
-[Mohammad Julfikar Mahmud] (PHP)
-[David Tanugrah] (JavaScript)
-[Kuhandran SamudraPandiyan] (Designer)
+[Mohammad Julfikar Mahmud] -> PHP
+[David Tanugrah] -> JavaScript
+[Kuhandran SamudraPandiyan] -> Designer
 
