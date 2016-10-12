@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Introducing Lollipop, a sweet new take on Android.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Dev Pub</title>
+    <title>Developer | Pub</title>
 
     <!-- Page styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
@@ -22,7 +22,6 @@
       margin-bottom: 40px;
       z-index: 900;
     }
-
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
@@ -122,7 +121,7 @@ span.psw {
     from {-webkit-transform: scale(0)}
     to {-webkit-transform: scale(1)}
 }
-    
+
 @keyframes animatezoom {
     from {transform: scale(0)}
     to {transform: scale(1)}
@@ -173,7 +172,7 @@ span.psw {
           </div>
               <!-- Login pop up -->
               <div id="id01" class="modal">
-              
+
                     <form class="modal-content animate" action="action_page.php">
 
                       <div class="container">
@@ -182,7 +181,7 @@ span.psw {
 
                         <label><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" name="psw" required>
-                          
+
                         <button type="submit">Login</button>
                         <input type="checkbox" checked="checked"> Remember me
                       </div>
@@ -207,7 +206,7 @@ span.psw {
                   </script>
 
                    <div id="id02" class="modal">
-              
+
                     <form class="modal-content animate">
 
                       <div class="container">
@@ -216,7 +215,7 @@ span.psw {
 
                         <label><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" name="psw" required>
-                          
+
                         <button type="submit">Login</button>
                         <input type="checkbox" checked="checked"> Remember me
                       </div>
@@ -239,15 +238,11 @@ span.psw {
                       }
                   }
                   </script>
-
-
-
          <span class="android-mobile-title mdl-layout-title">
                         <img class="android-logo-image" src="images/android-logo.png">
                       </span>
                     </div>
                   </div>
-
 
       <div class="android-content mdl-layout__content">
         <a name="top"></a>
@@ -434,7 +429,6 @@ span.psw {
             </div>
           </div>
         </div>
-
         <footer class="android-footer mdl-mega-footer">
           <div class="mdl-mega-footer--top-section">
             <div class="mdl-mega-footer--left-section">
@@ -461,7 +455,7 @@ span.psw {
             <a class="android-link mdl-typography--font-light" href="" color="white" >Blog</a>
             <a class="android-link mdl-typography--font-light" href="" color="white" >Privacy Policy</a>
           </div>
-
+          
         </footer>
       </div>
     </div>
