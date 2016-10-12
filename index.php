@@ -44,7 +44,23 @@
     First name:<input type ="text" name ="fname" required/><br>
     Last name:<input type ="text" name ="lname" required/><br>
     Email<input type ="email" name ="email" required/><br>
-    Password<input type ="password" name ="password" required/><br>
+    Password<input type ="password" name ="password" required id="pass"/><br>
+    Confirm Password<input type ="password" name ="conpass" required id="cpass"/><br>
+
+    <script>
+    function checkpassword()
+    {
+      if (document.getElementById('pass') == document.getElementById('cpass'))
+      {
+        alert("Your password match");
+      }
+      else{
+        alert("Your password did not match!");
+      }
+    }
+    </script>
+
+
     Country<input type ="text" name ="country" required/><br>
     Type<input type ="text" name ="mode" required/><br>
     Gender<input type ="text" name ="gender" required/><br>

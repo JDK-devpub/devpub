@@ -33,7 +33,11 @@
 <html>
 <head>
   <meta charset="UTF-8">
+<<<<<<< HEAD
   <title>Title of the document depends hihihi</title>
+=======
+  <title>Login Page</title>
+>>>>>>> origin/master
 </head>
 
 <body>
