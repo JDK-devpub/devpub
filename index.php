@@ -183,7 +183,7 @@ span.psw {
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#id02" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">SignUp</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#id01" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Jobs</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">News</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Forum</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Market</a>
             </nav>
           </div>
