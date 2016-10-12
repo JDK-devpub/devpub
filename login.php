@@ -33,7 +33,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Title of the document hahaha</title>
+  <title>Login Page</title>
 </head>
 
 <body>

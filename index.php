@@ -45,6 +45,7 @@
     Last name:<input type ="text" name ="lname" required/><br>
     Email<input type ="email" name ="email" required/><br>
     Password<input type ="password" name ="password" required/><br>
+    Confirm Password<input type ="password" name ="conpass" required/><br>
     Country<input type ="text" name ="country" required/><br>
     Type<input type ="text" name ="mode" required/><br>
     Gender<input type ="text" name ="gender" required/><br>
