@@ -15,10 +15,14 @@
         $sql="SELECT * FROM users WHERE email='$email' AND pass='".md5($password,TRUE)."'";
         $result=mysqli_query($dbconfig,$sql);
         $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
+
         if(mysqli_num_rows($result) == 1)
         {
+            $result=mysqli_query($dbconfig,$sql);
+            $row = $result->fetch_assoc();
             $_SESSION['sid']=session_id();
-            header('location:dashboard.php');
+            $id = $row['id'];
+            header("location:dashboard.php?id=".$id);
         }
         else
         {

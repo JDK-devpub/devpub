@@ -1,3 +1,18 @@
+<?php
+	session_start();
+	if($_SESSION['sid']==session_id())
+	{
+		if ($id = $_GET['id']){
+			    echo "<script>alert('Hello')</script>";
+		}else{
+					header('location:error.php');
+		}
+	}
+	else
+	{
+				  header('location:error.php');
+	}
+?>
 <!doctype html>
 <html lang="en">
   <head>
