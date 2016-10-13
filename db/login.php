@@ -32,7 +32,7 @@
         }
         else
         {
-            echo "Login Failed";
+            header('location:error.php');
         }
     }
 ?>

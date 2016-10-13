@@ -189,7 +189,7 @@ span.psw {
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="./db/dashboard.php" id="dash_id" style="display:none" >Dashboard</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Forum</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Market</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" id"jobs_id" style="display:block">Jobs</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="" id"jobs_id" style="display:block">Jobs</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="./db/logout.php" id="exit_id" style="display:none">Logout</a>
             </nav>
           </div>
