@@ -172,15 +172,10 @@ echo "Your session is running " . $_SESSION['globalID'];
                      <input  name="profilepicture" type="file" >
                    </div>
                  </div>
-
-
              </div>
            </div>
          </div>
        </section>
-
-
-
        <section class="edit_forms2">
            <div class="col s12 m12 l6">
           <div class="card-panel">
