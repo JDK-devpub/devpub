@@ -24,17 +24,17 @@ a img{
 }
 
 ::-moz-selection {
-  background-color: #6ab344;
+  background-color: #49B79E;
   color: #fff;
 }
 
 ::selection {
-  background-color: #6ab344;
+  background-color: #49B79E;
   color: #fff;
 }
 
 .android-search-box .mdl-textfield__input {
-  color: rgba(0, 0, 0, 0.87);
+  color: white;
 }
 
 .android-header .mdl-menu__container {
@@ -122,7 +122,7 @@ a img{
   }
 
     .android-navigation .mdl-navigation__link:hover {
-      border-bottom: 4px solid #8bc34a;
+      border-bottom: 4px solid #49B79E;
     }
 
   .android-search-box {
@@ -329,11 +329,11 @@ a img{
 
 .android-link {
   text-decoration: none;
-  color: #8bc34a !important;
+  color: #49B79E !important;
 }
 
   .android-link:hover {
-    color: #7cb342 !important;
+    color: #49B79E !important;
   }
 
   .android-link .material-icons {
@@ -395,6 +395,7 @@ a img{
 
   .android-card-container .mdl-card__media {
     overflow: hidden;
+      background:#37474f;
     background: transparent;
   }
 
@@ -403,28 +404,32 @@ a img{
     }
 
   .android-card-container .mdl-card__title {
-    background: transparent;
+    background:#37474f;
     height: auto;
   }
 
   .android-card-container .mdl-card__title-text {
-    color: black;
+    color: white;
+      background:#37474f;
     height: auto;
   }
 
   .android-card-container .mdl-card__supporting-text {
     height: auto;
-    color: black;
+      background:#37474f;
+    color: white;
     padding-bottom: 56px;
   }
 
   .android-card-container .mdl-card__actions {
     position: absolute;
+      background:#37474f;
     bottom: 0;
   }
 
   .android-card-container .mdl-card__actions a {
     border-top: none;
+      background:#37474f;
     font-size: 16px;
   }
 
@@ -434,7 +439,8 @@ a img{
 }
 
   .android-footer a:hover {
-    color: #8bc34a;
+    color: #37474f;
+      background-color: #37474f;
   }
 
   .android-footer .mdl-mega-footer--top-section::after {
@@ -450,11 +456,13 @@ a img{
   }
 
   .android-footer .mdl-mega-footer--bottom-section a {
+    color:#37474f;
     margin-right: 2em;
   }
 
   .android-footer .mdl-mega-footer--right-section a .material-icons {
     position: relative;
+    color:#37474f;
     top: 6px;
   }
 
@@ -538,5 +546,28 @@ a img{
 
   .android-footer .mdl-mega-footer--bottom-section {
     display: none;
+      background-color: #37474f;
+    color:#37474f;
+
   }
+
+  /*
+    Multicoloured Hover Variations
+*/
+
+ #social-fb:hover {
+     color: #3B5998;
+ }
+ #social-tw:hover {
+     color: #4099FF;
+ }
+ #social-gp:hover {
+     color: #d34836;
+ }
+ #social-em:hover {
+     color: #f39c12;
+ }
+
+
+
 }
