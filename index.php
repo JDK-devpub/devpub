@@ -184,15 +184,9 @@ span.psw {
           <!-- Navigation -->
           <div class="android-navigation-container" id="navigation_class">
             <nav class="android-navigation mdl-navigation">
-<<<<<<< HEAD
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#id02" id="signup_id" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">SignUp</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#id01" id="login_id"  onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="./db/dashboard.php" id="dash_id" style="display:none" >Dashboard</a>
-=======
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#id02" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">SignUp</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#id01" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Jobs</a>
->>>>>>> origin/master
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Forum</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Market</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" id"jobs_id" style="display:block">Jobs</a>

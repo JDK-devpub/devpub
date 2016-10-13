@@ -24,12 +24,8 @@
             $row = $result->fetch_assoc();
             $_SESSION['sid']=session_id();
             $id = $row['id'];
-<<<<<<< HEAD
   $_SESSION['id'] = $globalID;
             header("location:../index.php?id=".$id);
-=======
-            header("location:dashboard.php?id=".$id);
->>>>>>> origin/master
         }
         else
         {
