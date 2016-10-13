@@ -1,17 +1,10 @@
 <?php
-  require('login.php');
-  session_start();
+session_start();
+if(isset($_SESSION['globalID'])) {
+  echo "Your session is running " . $_SESSION['globalID'];
+}
 
-  if ($globalID = $_GET['id'])
-    {
-          echo "<script>
-              alert('Hello');
-          </script>";
-
-    }else{
-      header('location:../index.php');
-    }
-?>
+ ?>
 <!doctype html>
 <html lang="en">
   <head>

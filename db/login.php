@@ -2,6 +2,8 @@
     session_start();
     include ("dbconfig.php");
 
+
+
     $msg = "";
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
@@ -20,11 +22,12 @@
 
         if(mysqli_num_rows($result) == 1)
         {
+
             $result=mysqli_query($dbconfig,$sql);
             $row = $result->fetch_assoc();
             $_SESSION['sid']=session_id();
             $id = $row['id'];
-  $_SESSION['id'] = $globalID;
+            $_SESSION['globalID'] = $id;
             header("location:../index.php?id=".$id);
         }
         else
