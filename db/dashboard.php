@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
   require('login.php');
   session_start();
 
@@ -11,6 +12,21 @@
     }else{
       header('location:../index.php');
     }
+=======
+	session_start();
+	if($_SESSION['sid']==session_id())
+	{
+		if ($id = $_GET['id']){
+			    echo "<script>alert('Hello')</script>";
+		}else{
+					header('location:error.php');
+		}
+	}
+	else
+	{
+				  header('location:error.php');
+	}
+>>>>>>> origin/master
 ?>
 <!doctype html>
 <html lang="en">
