@@ -1,23 +1,9 @@
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
 }
 .demo-avatar {
+  margin-left: 40px;
   width: 48px;
   height: 48px;
   border-radius: 24px;
@@ -69,6 +55,7 @@ html, body {
   height: 151px;
 }
 .demo-avatar-dropdown {
+  margin-top: 20px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -97,7 +84,7 @@ html, body {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  color: rgba(255, 255, 255, 0.56);
+  color: white;
   font-weight: 500;
 }
 .demo-layout .demo-navigation .mdl-navigation__link:hover {
@@ -106,12 +93,13 @@ html, body {
 }
 .demo-navigation .mdl-navigation__link .material-icons {
   font-size: 24px;
-  color: rgba(255, 255, 255, 0.56);
+  color: white;
   margin-right: 32px;
 }
 
 .demo-content {
   max-width: 1080px;
+  max-height: 400px;
 }
 
 .demo-charts {
@@ -149,7 +137,7 @@ html, body {
  * Using a browserhacks.com solution for now.
  */
 _:-ms-input-placeholder, :root .demo-graphs {
-  min-height: 664px;
+  min-height: 300px;
 }
 _:-ms-input-placeholder, :root .demo-graph {
   max-height: 300px;
@@ -210,7 +198,7 @@ _:-ms-input-placeholder, :root .demo-graph {
   margin: 4px 0;
 }
 .demo-options .material-icons {
-  color: rgba(255, 255, 255, 0.89);
+  color: white;
 }
 .demo-options .mdl-card__actions {
   height: 64px;
@@ -221,4 +209,24 @@ _:-ms-input-placeholder, :root .demo-graph {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.recent{
+  margin-right: 700px;
+  margin-left:300px;
+}
+
+.edit_forms1{
+  padding:50px;
+  margin-left: 20px;
+  max-width: 800px;
+  max-height: 500;
+}
+
+.edit_forms2{
+  margin-top: -500px;
+  padding: 50px;
+  margin-right: 100px;
+  float: right;
+  max-width: 800px;
 }

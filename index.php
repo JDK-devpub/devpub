@@ -799,13 +799,10 @@ span.psw {
 <?php
   session_start();
   if($_SESSION['sid']==session_id())
-{
-  if ($id = $_GET['id'])
 		{
 			    echo "<script>
               hideStuff('signup_id', 'login_id');
           </script>";
 		}else{
 		}
-}
 ?>
