@@ -549,7 +549,6 @@ span.psw {
                       </div>
                     </form>
                </div>
-
                   <script>
                   // Get the modal
                   var modal = document.getElementById('id02');

@@ -31,6 +31,8 @@
               if ($query){
                 //header('location:../index.php');
                 echo "Successful";
+              }else{
+                echo "false";
               }
           }
         }

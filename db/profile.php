@@ -6,7 +6,22 @@ $id = $_SESSION['globalID'];
 $profile_content = mysqli_query($dbconfig,"select * from users where id='$id'");
 while ($row_result = mysqli_fetch_array($profile_content)){
   $fname = $row_result['fname'];
+  $lname = $row_result['lname'];
   $email = $row_result['email'];
+  $nick = $row_result['nickname'];
+  $skill = $row_result['sname'];
+  $dob = $row_result['dob'];
+  $country = $row_result['country'];
+  $image = $row_result['picture'];
+}
+$profile_exp_info = mysqli_query($dbconfig,"select * from user_education where id ='$id'");
+while ($row = mysqli_fetch_array($profile_exp_info)){
+  $ptitle = $row['ptitle'];
+  $company = $row['company'];
+  $college = $row['college'];
+  $last_qual = $row['last_qual'];
+  $employment_project = $row['employment_project'];
+  $aboutme = $row['aboutme'];
 }
 }else{
   header('location:error.php');
@@ -24,9 +39,6 @@ while ($row_result = mysqli_fetch_array($profile_content)){
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="icon" sizes="192x192" href="images/android-desktop.png">
-
-
-
 
  <!-- Favicons-->
  <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
@@ -82,7 +94,6 @@ while ($row_result = mysqli_fetch_array($profile_content)){
    <link href="bootstrap/nprogress.css" rel="stylesheet">
    <!-- iCheck -->
 
-
    <!-- Custom Theme Style -->
    <link href="bootstrap/custom.min.css" rel="stylesheet">
     <style>
@@ -112,12 +123,11 @@ while ($row_result = mysqli_fetch_array($profile_content)){
               <label class="mdl-textfield__label" for="search">Enter your query...</label>
             </div>
           </div>
-
         </div>
       </header>
       <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
         <header class="demo-drawer-header">
-          <img src="images/user.jpg" class="demo-avatar">
+          <img src="data:image/jpeg;base64,<?php echo base64_encode($image); ?>" class="demo-avatar">
           <div class="demo-avatar-dropdown">
             <span><?php echo $email ?></span>
           </div>
@@ -140,7 +150,6 @@ while ($row_result = mysqli_fetch_array($profile_content)){
 
                <!--start container-->
                <div class="container">
-
                  <div id="profile-page" class="section">
                    <!-- profile-page-header -->
                    <div id="profile-page-header" class="card">
@@ -148,30 +157,30 @@ while ($row_result = mysqli_fetch_array($profile_content)){
                            <img class="activator" src="images/cover.png" alt="user background">
                        </div>
                        <figure class="card-profile-image">
-                           <img src="images/user.jpg" alt="profile image" class="circle z-depth-2 responsive-img activator">
+                           <img src="data:image/jpeg;base64,<?php echo base64_encode($image); ?>" alt="profile image" class="circle z-depth-2 responsive-img activator">
                        </figure>
                        <div class="card-content" style="margin-top:5px">
                          <div class="row">
                            <div class="col s3 offset-s2">
                                <h4 class="card-title grey-text text-darken-4"><?php echo $fname ?></h4>
-                               <p class="medium-small grey-text">Project Manager</p>
+                               <p class="medium-small grey-text"><?php echo $nick ?></p>
                            </div>
                            <div class="col s2 center-align">
-                               <h4 class="card-title grey-text text-darken-4">10+</h4>
-                               <p class="medium-small grey-text">Work Experience</p>
+                               <h4 class="card-title grey-text text-darken-4">Education</h4>
+                               <p class="medium-small grey-text"><?php echo $college ?></p>
                            </div>
                            <div class="col s2 center-align">
-                               <h4 class="card-title grey-text text-darken-4">6</h4>
-                               <p class="medium-small grey-text">Completed Projects</p>
+                               <h4 class="card-title grey-text text-darken-4">Workplace</h4>
+                               <p class="medium-small grey-text"><?php echo $company ?></p>
                            </div>
                            <div class="col s2 center-align">
-                               <h4 class="card-title grey-text text-darken-4">$ 1,253,000</h4>
-                               <p class="medium-small grey-text">Busness Profit</p>
+                               <h4 class="card-title grey-text text-darken-4">Bullshit</h4>
+                               <p class="medium-small grey-text">Need to be changed</p>
                            </div>
 
                          </div>
                        </div>
-                       <div class="card-reveal">
+                    <!--   <div class="card-reveal">
                            <p>
                              <span class="card-title grey-text text-darken-4"><?php echo $fname ?><i class="mdi-navigation-close right"></i></span>
                              <span><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> Project Manager</span>
@@ -183,14 +192,12 @@ while ($row_result = mysqli_fetch_array($profile_content)){
                            <p><i class="mdi-communication-email cyan-text text-darken-2"></i> mail@domain.com</p>
                            <p><i class="mdi-social-cake cyan-text text-darken-2"></i> 18th June 1990</p>
                            <p><i class="mdi-device-airplanemode-on cyan-text text-darken-2"></i> BAR - AUS</p>
-                       </div>
-
+                       </div> -->
                    </div>
-
                      <div class="card light-blue" style="margin-left:550px;margin-top:30px;height:500px">
                        <div class="card-content white-text">
                          <span class="card-title">About Me!</span>
-                         <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                         <p><?php echo $aboutme ?></p>
                        </div>
                      </div>
 
@@ -209,62 +216,60 @@ while ($row_result = mysqli_fetch_array($profile_content)){
                        <ul id="profile-page-about-details" class="collection z-depth-1">
                          <li class="collection-item">
                            <div class="row">
-                             <div class="col s5 grey-text darken-1"><i class="mdi-action-wallet-travel"></i> Project</div>
-                             <div class="col s7 grey-text text-darken-4 right-align">ABC Name</div>
+                             <div class="col s5 grey-text darken-1"><i class="mdi-action-wallet-travel"></i>Project</div>
+                             <div class="col s7 grey-text text-darken-4 right-align"><?php echo $ptitle ?></div>
                            </div>
                          </li>
                          <li class="collection-item">
                            <div class="row">
                              <div class="col s5 grey-text darken-1"><i class="mdi-social-poll"></i> Skills</div>
-                             <div class="col s7 grey-text text-darken-4 right-align">HTML, CSS</div>
+                             <div class="col s7 grey-text text-darken-4 right-align"><?php echo $skill ?></div>
                            </div>
                          </li>
                          <li class="collection-item">
                            <div class="row">
                              <div class="col s5 grey-text darken-1"><i class="mdi-social-domain"></i> Lives in</div>
-                             <div class="col s7 grey-text text-darken-4 right-align">NY, USA</div>
+                             <div class="col s7 grey-text text-darken-4 right-align"><?php echo $country ?></div>
                            </div>
                          </li>
                          <li class="collection-item">
                            <div class="row">
                              <div class="col s5 grey-text darken-1"><i class="mdi-social-cake"></i> Birth date</div>
-                             <div class="col s7 grey-text text-darken-4 right-align">18th June, 1991</div>
+                             <div class="col s7 grey-text text-darken-4 right-align"><?php echo $dob ?></div>
                            </div>
                          </li>
                        </ul>
                        <!--/ Profile About Details  -->
 
-
-
                        <!-- Profile feed  -->
                        <ul id="profile-page-about-feed" class="collection z-depth-1">
                          <li class="collection-item avatar">
                            <i class="mdi-file-folder circle"></i>
-                           <span class="title">Project Title</span>
-                           <p>Task assigned to new changes.
-                             <br> <span class="ultra-small">Second Line</span>
+                           <span class="title">Qualification</span>
+                           <p>
+                             <?php echo urldecode($last_qual); ?>
                            </p>
                            <a href="#!" class="secondary-content"><i class="mdi-action-grade"></i></a>
                          </li>
                          <li class="collection-item avatar">
                            <i class="mdi-file-folder circle"></i>
-                           <span class="title">New Project</span>
-                           <p>First Line of Project Work
-                             <br> <span class="ultra-small">Second Line</span>
+                           <span class="title">Project Title</span>
+                           <p>
+                             <?php echo $ptitle ?>
                            </p>
                            <a href="#!" class="secondary-content"><i class="mdi-social-domain"></i></a>
                          </li>
                          <li class="collection-item avatar">
                            <i class="mdi-action-assessment circle green"></i>
-                           <span class="title">New Payment</span>
-                           <p>Last UK Project Payment
-                             <br> <span class="ultra-small">$ 3,684.00</span>
+                           <span class="title">Current Project</span>
+                           <p>
+                             <?php echo urldecode($employment_project); ?>
                            </p>
                            <a href="#!" class="secondary-content"><i class="mdi-editor-attach-money"></i></a>
                          </li>
                          <li class="collection-item avatar">
                            <i class="mdi-av-play-arrow circle red"></i>
-                           <span class="title">Latest News</span>
+                           <span class="title">Active Group</span>
                            <p>company management news
                              <br> <span class="ultra-small">Second Line</span>
                            </p>

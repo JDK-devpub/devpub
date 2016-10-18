@@ -7,6 +7,8 @@ $profile_content = mysqli_query($dbconfig,"select * from users where id='$id'");
 while ($row_result = mysqli_fetch_array($profile_content)){
   $fname = $row_result['fname'];
   $email = $row_result['email'];
+  $image = $row_result['picture'];
+  $nick = $row_result['nickname'];
 }
 }else{
   header('location:error.php');
@@ -92,7 +94,7 @@ while ($row_result = mysqli_fetch_array($profile_content)){
       </header>
       <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
         <header class="demo-drawer-header">
-          <img src="images/user.jpg" class="demo-avatar">
+          <img src="data:image/jpeg;base64,<?php echo base64_encode($image); ?>" class="demo-avatar">
           <div class="demo-avatar-dropdown">
             <span><?php echo $email ?></span>
           </div>

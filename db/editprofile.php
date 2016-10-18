@@ -6,7 +6,12 @@ $id = $_SESSION['globalID'];
 $profile_content = mysqli_query($dbconfig,"select * from users where id='$id'");
 while ($row_result = mysqli_fetch_array($profile_content)){
   $fname = $row_result['fname'];
+  $lname = $row_result['lname'];
   $email = $row_result['email'];
+  $nick = $row_result['nickname'];
+  $skill = $row_result['sname'];
+  $dob = $row_result['dob'];
+  $image = $row_result['picture'];
 }
 }else{
   header('location:error.php');
@@ -114,7 +119,7 @@ while ($row_result = mysqli_fetch_array($profile_content)){
       </header>
       <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
         <header class="demo-drawer-header">
-          <img src="images/user.jpg" class="demo-avatar">
+          <img src="data:image/jpeg;base64,<?php echo base64_encode($image); ?>" class="demo-avatar">
           <div class="demo-avatar-dropdown">
             <span><?php echo $email ?></span>
           </div>
@@ -137,42 +142,37 @@ while ($row_result = mysqli_fetch_array($profile_content)){
            <div class="card-panel">
              <h4 class="header2">Edit Profile</h4>
              <div class="row">
-               <form class="col s12">
+               <form class="col s12" method="post" action="updateData.php" enctype="multipart/form-data">
                  <div class="row">
                    <div class="input-field col s12">
                         <label for="first_name">Firstname</label>
                         <br>
-                     <input placeholder="FirstName" name="fname" type="text">
+                     <input placeholder="FirstName" name="ufname" type="text" value="<?php echo "$fname"; ?>" required>
                    </div>
                    <div class="input-field col s12">
                         <label for="last_name">Lastname</label>
                         <br>
-                     <input placeholder="John Doe" name="lname" type="text">
+                     <input placeholder="John Doe" name="ulname" type="text" value="<?php echo "$lname"; ?>" required>
                    </div>
                    <div class="input-field col s12">
-                        <label for="first_name">Secret Name</label>
+                        <label for="first_name">DevPub Name</label>
                         <br>
-                     <input placeholder="Security Reasons" name="country" type="text">
+                     <input placeholder="Reason: Coolness" name="nickname" type="text" value="<?php echo "$nick"; ?>" required>
                    </div>
                    <div class="input-field col s12">
                         <label for="skills">Skills</label>
                         <br>
-                     <input placeholder="Type skill 1,skill 2" name="skills" type="text">
-                   </div>
-                   <div class="input-field col s12">
-                        <label for="first_name">Projects</label>
-                        <br>
-                     <input placeholder="John Doe" name="project" type="text">
+                     <input placeholder="Type skill 1,skill 2,..." name="skills" type="text" value="<?php echo "$skill"; ?>" required>
                    </div>
                    <div class="input-field col s12">
                         <label for="first_name">Birthdate</label>
                         <br>
-                     <input  name="dob" type="date">
+                     <input  name="dob" type="date" value="<?php echo "$dob"; ?>" required>
                    </div>
                    <div class="input-field col s12">
                         <label for="profilepicture">Upload Profile Picture</label>
                         <br><br>
-                     <input  name="profilepicture" type="file" >
+                     <input name="image" type="file">
                    </div>
                  </div>
              </div>
@@ -204,7 +204,7 @@ while ($row_result = mysqli_fetch_array($profile_content)){
                   <div class="input-field col s12">
                        <label for="skills">Last Educational Qualification</label>
                        <br>
-                    <input placeholder="Type skill 1,skill 2" name="lquali" type="text">
+                    <input placeholder="Type skill 1,skill 2" name="quali" type="text">
                   </div>
                   <div class="input-field col s12">
                        <label for="first_name">Employment Projects</label>
@@ -213,13 +213,12 @@ while ($row_result = mysqli_fetch_array($profile_content)){
                   </div>
                   <div class="input-field col s12">
                     <br>
-                            <textarea placeholder="Enter About your self" id="message2" class="materialize-textarea"></textarea>
-                            <label for="message">About Us</label>
+                            <textarea placeholder="Enter About your self" name="text" class="materialize-textarea"></textarea>
+                            <label for="message">Bio</label>
                   </div>
-
                   <div class="row" style="margin-right:50px;margin-top:10px">
                           <div class="input-field col s12">
-                            <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Submit
+                            <button class="btn cyan waves-effect waves-light right" type="submit" name="submit">Submit
                             </button>
                           </div>
                         </div>
