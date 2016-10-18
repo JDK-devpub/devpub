@@ -111,7 +111,7 @@ while ($row_result = mysqli_fetch_array($profile_content)){
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
             <div class="mdl-textfield__expandable-holder">
               <input class="mdl-textfield__input" type="text" id="search">
-              <label class="mdl-textfield__label" for="search">Enter your query...</label>
+              <label class="mdl-textfield__label" for="search"></label>
             </div>
           </div>
 

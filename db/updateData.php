@@ -53,19 +53,18 @@
             }else{
               echo "Successful";
               }
-            }
         }else{
-            echo "Form Problem";
-          }
-        }else {
-          echo "File is Too Big";
+          echo "Form Issue";
         }
-      }else {
-        echo "<script>
-                  alert('Choose A Photo');
-              </script>";
+      }else{
+        echo "File too big";
       }
     }else{
-      echo "Global ID Problem";
+      echo "<script>
+                alert('Choose Image File');
+            </script>";
     }
+  }else{
+    echo "Session Problem";
+  }
  ?>
