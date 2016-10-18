@@ -1,4 +1,4 @@
-# devpub
+# DevelopersPub
 CSCI-318 Assignment
 #David Tanugrah
 #Hsiao Qin
