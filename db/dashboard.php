@@ -1,7 +1,13 @@
 <?php
+include ("dbconfig.php");
 session_start();
 if(isset($_SESSION['globalID'])) {
-echo "Your session is running " . $_SESSION['globalID'];
+$id = $_SESSION['globalID'];
+$profile_content = mysqli_query($dbconfig,"select * from users where id='$id'");
+while ($row_result = mysqli_fetch_array($profile_content)){
+  $fname = $row_result['fname'];
+  $email = $row_result['email'];
+}
 }else{
   header('location:error.php');
 }
@@ -52,6 +58,9 @@ echo "Your session is running " . $_SESSION['globalID'];
    <!-- Custom Theme Style -->
    <link href="bootstrap/custom.min.css" rel="stylesheet">
     <style>
+    body {
+        overflow:hidden;
+      }
     #view-source {
       position: fixed;
       display: block;
@@ -85,7 +94,7 @@ echo "Your session is running " . $_SESSION['globalID'];
         <header class="demo-drawer-header">
           <img src="images/user.jpg" class="demo-avatar">
           <div class="demo-avatar-dropdown">
-            <span>hello@example.com</span>
+            <span><?php echo $email ?></span>
           </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
@@ -97,7 +106,7 @@ echo "Your session is running " . $_SESSION['globalID'];
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Forum</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Crew</a>
           <div class="mdl-layout-spacer"></div>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">exit_to_app</i><span >Logout</span></a>
+          <a class="mdl-navigation__link" href="logout.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">exit_to_app</i><span >Logout</span></a>
         </nav>
       </div>
       <main class="mdl-layout__content mdl-color--grey-100">

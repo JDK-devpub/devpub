@@ -28,7 +28,10 @@
           else
           {
               $query = mysqli_query($dbconfig, "INSERT INTO users (fname,lname,email,pass,country,gender)VALUES ('$fname','$lname','$email','$password','$country','$gender')");
-              echo "Successful";
+              if ($query){
+                //header('location:../index.php');
+                echo "Successful";
+              }
           }
         }
     }

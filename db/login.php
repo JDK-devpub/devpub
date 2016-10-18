@@ -2,8 +2,6 @@
     session_start();
     include ("dbconfig.php");
 
-
-
     $msg = "";
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {

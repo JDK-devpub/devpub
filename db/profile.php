@@ -1,7 +1,13 @@
 <?php
+include ("dbconfig.php");
 session_start();
 if(isset($_SESSION['globalID'])) {
-echo "Your session is running " . $_SESSION['globalID'];
+$id = $_SESSION['globalID'];
+$profile_content = mysqli_query($dbconfig,"select * from users where id='$id'");
+while ($row_result = mysqli_fetch_array($profile_content)){
+  $fname = $row_result['fname'];
+  $email = $row_result['email'];
+}
 }else{
   header('location:error.php');
 }
@@ -113,7 +119,7 @@ echo "Your session is running " . $_SESSION['globalID'];
         <header class="demo-drawer-header">
           <img src="images/user.jpg" class="demo-avatar">
           <div class="demo-avatar-dropdown">
-            <span>hello@example.com</span>
+            <span><?php echo $email ?></span>
           </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
@@ -125,7 +131,7 @@ echo "Your session is running " . $_SESSION['globalID'];
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Forum</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Crew</a>
           <div class="mdl-layout-spacer"></div>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">exit_to_app</i><span >Logout</span></a>
+          <a class="mdl-navigation__link" href="logout.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">exit_to_app</i><span >Logout</span></a>
         </nav>
       </div>
       <main class="mdl-layout__content mdl-color--grey-100">
@@ -147,7 +153,7 @@ echo "Your session is running " . $_SESSION['globalID'];
                        <div class="card-content" style="margin-top:5px">
                          <div class="row">
                            <div class="col s3 offset-s2">
-                               <h4 class="card-title grey-text text-darken-4">Roger Waters</h4>
+                               <h4 class="card-title grey-text text-darken-4"><?php echo $fname ?></h4>
                                <p class="medium-small grey-text">Project Manager</p>
                            </div>
                            <div class="col s2 center-align">
@@ -167,7 +173,7 @@ echo "Your session is running " . $_SESSION['globalID'];
                        </div>
                        <div class="card-reveal">
                            <p>
-                             <span class="card-title grey-text text-darken-4">Roger Waters <i class="mdi-navigation-close right"></i></span>
+                             <span class="card-title grey-text text-darken-4"><?php echo $fname ?><i class="mdi-navigation-close right"></i></span>
                              <span><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> Project Manager</span>
                            </p>
 
