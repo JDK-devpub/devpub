@@ -166,7 +166,7 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
                    <div class="input-field col s12">
                         <label for="first_name">DevPub Name</label>
                         <br>
-                     <input placeholder="Reason: Coolness" name="nickname" type="text" value="<?php echo "$nick"; ?>" required>
+                     <input placeholder="Reason: Coolness" name="nickname" type="text" value="<?php echo urldecode($nick); ?>" required>
                    </div>
                    <div class="input-field col s12">
                         <label for="skills">Skills</label>

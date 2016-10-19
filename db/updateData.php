@@ -10,7 +10,7 @@
       $id = $_SESSION['globalID'];
       if (in_array(strtolower($filetype),$types))
       {
-      	if($filesize <= 200000)
+      	if($filesize <= 2000000)
         {
         if(isset($_POST["submit"]))
         {
