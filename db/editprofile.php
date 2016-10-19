@@ -13,6 +13,15 @@ while ($row_result = mysqli_fetch_array($profile_content)){
   $dob = $row_result['dob'];
   $image = $row_result['picture'];
 }
+$profile_exp_info = mysqli_query($dbconfig,"select * from user_education where id ='$id'");
+while ($row = mysqli_fetch_array($profile_exp_info)){
+  $ptitle = $row['ptitle'];
+  $company = $row['company'];
+  $college = $row['college'];
+  $last_qual = $row['last_qual'];
+  $employment_project = $row['employment_project'];
+  $aboutme = $row['aboutme'];
+}
 }else{
   header('location:error.php');
 }
@@ -189,31 +198,31 @@ while ($row_result = mysqli_fetch_array($profile_content)){
                   <div class="input-field col s12">
                        <label for="first_name">Project Tile</label>
                        <br>
-                    <input placeholder="Project 1, Project 2" name="pname" type="text">
+                    <input placeholder="Project 1, Project 2" name="pname" type="text" value="<?php echo urldecode($ptitle); ?>">
                   </div>
                   <div class="input-field col s12">
                        <label for="last_name">Company Name</label>
                        <br>
-                    <input placeholder="Company Name" name="cname" type="text">
+                    <input placeholder="Company Name" name="cname" type="text" value="<?php echo urldecode($company); ?>">
                   </div>
                   <div class="input-field col s12">
                        <label for="first_name">College or University name</label>
                        <br>
-                    <input placeholder="College Or University Name" name="college" type="text">
+                    <input placeholder="College Or University Name" name="college" type="text" value="<?php echo urldecode($college); ?>">
                   </div>
                   <div class="input-field col s12">
                        <label for="skills">Last Educational Qualification</label>
                        <br>
-                    <input placeholder="Type skill 1,skill 2" name="quali" type="text">
+                    <input placeholder="Type skill 1,skill 2" name="quali" type="text" value="<?php echo urldecode($last_qual); ?>">
                   </div>
                   <div class="input-field col s12">
                        <label for="first_name">Employment Projects</label>
                        <br>
-                    <input placeholder="Company Projects" name="eproject" type="text">
+                    <input placeholder="Company Projects" name="eproject" type="text" value="<?php echo urldecode($employment_project); ?>">
                   </div>
                   <div class="input-field col s12">
                     <br>
-                            <textarea placeholder="Enter About your self" name="text" class="materialize-textarea"></textarea>
+                            <textarea placeholder="Enter About your self" name="text" class="materialize-textarea" ><?php echo $aboutme; ?></textarea>
                             <label for="message">Bio</label>
                   </div>
                   <div class="row" style="margin-right:50px;margin-top:10px">
