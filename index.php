@@ -280,7 +280,7 @@ span.psw {
                                  <tr>
                                    <td style="width:50%;color:white"><label><b>Country</b></label></td>
                                    <td>
-                                     <select name="country" class="sel1" id="country">
+                                     <select name="country" class="sel1" id="country" style="width:200px">
                                             <option value="0" >  Select Country</option>
                                             <option value="Afganistan">Afghanistan</option>
                                             <option value="Albania">Albania</option>

@@ -173,10 +173,7 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
                                <h4 class="card-title grey-text text-darken-4">Workplace</h4>
                                <p class="medium-small grey-text"><?php echo $company ?></p>
                            </div>
-                           <div class="col s2 center-align">
-                               <h4 class="card-title grey-text text-darken-4">Bullshit</h4>
-                               <p class="medium-small grey-text">Need to be changed</p>
-                           </div>
+
 
                          </div>
                        </div>
@@ -193,8 +190,9 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
                            <p><i class="mdi-social-cake cyan-text text-darken-2"></i> 18th June 1990</p>
                            <p><i class="mdi-device-airplanemode-on cyan-text text-darken-2"></i> BAR - AUS</p>
                        </div> -->
-                   </div>
-                     <div class="card light-blue" style="margin-left:550px;margin-top:30px;height:500px">
+                   </div >
+
+                     <div class="card light-blue" style="float:right;width:900px;height:500px">
                        <div class="card-content white-text">
                          <span class="card-title">About Me!</span>
                          <p><?php echo $aboutme ?></p>
@@ -217,7 +215,7 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
                          <li class="collection-item">
                            <div class="row">
                              <div class="col s5 grey-text darken-1"><i class="mdi-action-wallet-travel"></i>Project</div>
-                             <div class="col s7 grey-text text-darken-4 right-align"><?php echo $ptitle ?></div>
+                             <div class="col s7 grey-text text-darken-4 right-align"><?php echo urldecode($ptitle) ?></div>
                            </div>
                          </li>
                          <li class="collection-item">
@@ -239,42 +237,49 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
                            </div>
                          </li>
                        </ul>
-                       <!--/ Profile About Details  -->
-
-                       <!-- Profile feed  -->
                        <ul id="profile-page-about-feed" class="collection z-depth-1">
-                         <li class="collection-item avatar">
-                           <i class="mdi-file-folder circle"></i>
-                           <span class="title">Qualification</span>
+                         <li class="collection-item avatar" style="height:65px">
+                             <span class="title" style="font-weight:bold">
+                                <i class="material-icons mdl-list__item-avatar" style="margin-left:-60px">school</i>
+                                <div style="margin-top:-28px;margin-left:-8px">
+                               <span>Qualification</span>
+                             </div>
+                             </span>
+                            <div style="float:right;margin-top:-18px">
                            <p>
                              <?php echo urldecode($last_qual); ?>
                            </p>
-                           <a href="#!" class="secondary-content"><i class="mdi-action-grade"></i></a>
+                         </div>
                          </li>
-                         <li class="collection-item avatar">
-                           <i class="mdi-file-folder circle"></i>
-                           <span class="title">Project Title</span>
+                         <li class="collection-item avatar" style="height:65px">
+                             <span class="title" style="font-weight:bold">
+                                <i class="material-icons mdl-list__item-avatar" style="margin-left:-60px">folder</i>
+                                <div style="margin-top:-28px;margin-left:-8px">
+                               <span>Project Title</span>
+                             </div>
+                             </span>
+                            <div style="float:right;margin-top:-18px">
                            <p>
-                             <?php echo $ptitle ?>
+                               <?php echo $ptitle ?>
                            </p>
-                           <a href="#!" class="secondary-content"><i class="mdi-social-domain"></i></a>
+                         </div>
                          </li>
-                         <li class="collection-item avatar">
-                           <i class="mdi-action-assessment circle green"></i>
-                           <span class="title">Current Project</span>
+                         <li class="collection-item avatar" style="height:65px">
+                             <span class="title" style="font-weight:bold">
+                                <i class="material-icons mdl-list__item-avatar" style="margin-left:-60px">build</i>
+                                <div style="margin-top:-28px;margin-left:-8px">
+                               <span>Current Project</span>
+                             </div>
+                             </span>
+                            <div style="float:right;margin-top:-18px">
                            <p>
-                             <?php echo urldecode($employment_project); ?>
+                              <?php echo urldecode($employment_project); ?>
                            </p>
-                           <a href="#!" class="secondary-content"><i class="mdi-editor-attach-money"></i></a>
+                         </div>
                          </li>
-                         <li class="collection-item avatar">
-                           <i class="mdi-av-play-arrow circle red"></i>
-                           <span class="title">Active Group</span>
-                           <p>company management news
-                             <br> <span class="ultra-small">Second Line</span>
-                           </p>
-                           <a href="#!" class="secondary-content"><i class="mdi-action-track-changes"></i></a>
-                         </li>
+
+
+
                        </ul>
                        <!-- Profile feed  -->
 
