@@ -11,6 +11,13 @@
         $conpass = $_POST["conpass"];
         $country = $_POST["country"];
         $gender = $_POST["radio"];
+        //Dummy Data
+        $ptitle = "No Information";
+        $company = "No Information";
+        $college = "No Information";
+        $last_qual = "No Information";
+        $employment_project = "No Information";
+        $aboutme = "No Information";
 
         if ($password != $conpass){
           echo "Password Didn't Match";
@@ -30,6 +37,15 @@
               $query = mysqli_query($dbconfig, "INSERT INTO users (fname,lname,email,pass,country,gender)VALUES ('$fname','$lname','$email','$password','$country','$gender')");
               if ($query){
                 //header('location:../index.php');
+                $sql_reg = "SELECT id from users where email ='$email'";
+                $result_reg = mysqli_query($dbconfig,$sql_reg);
+                $row_id = mysqli_fetch_array($result_reg,MYSQLI_ASSOC);
+                $newID = $row_id['id'];
+                if (mysqli_num_rows($result_reg) == 1){
+                    $sql = mysqli_query($dbconfig, "INSERT INTO user_education (id, ptitle,company,college,last_qual,employment_project,aboutme) VALUES ('$newID','$ptitle','$company','$college','$last_qual','$employment_project','$aboutme')");
+                }else{
+                  echo "couldnot get id";
+                }
                 echo "Successful";
               }else{
                 echo "false";

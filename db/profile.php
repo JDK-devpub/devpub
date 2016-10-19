@@ -167,7 +167,7 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
                            </div>
                            <div class="col s2 center-align">
                                <h4 class="card-title grey-text text-darken-4">Education</h4>
-                               <p class="medium-small grey-text"><?php echo $college ?></p>
+                               <p class="medium-small grey-text"><?php echo urldecode($college); ?></p>
                            </div>
                            <div class="col s2 center-align">
                                <h4 class="card-title grey-text text-darken-4">Workplace</h4>
@@ -217,7 +217,7 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
                          <li class="collection-item">
                            <div class="row">
                              <div class="col s5 grey-text darken-1"><i class="mdi-action-wallet-travel"></i>Project</div>
-                             <div class="col s7 grey-text text-darken-4 right-align"><?php echo $ptitle ?></div>
+                             <div class="col s7 grey-text text-darken-4 right-align"><?php echo urldecode($ptitle) ?></div>
                            </div>
                          </li>
                          <li class="collection-item">
@@ -255,7 +255,7 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
                            <i class="mdi-file-folder circle"></i>
                            <span class="title">Project Title</span>
                            <p>
-                             <?php echo $ptitle ?>
+                             <?php echo urldecode($ptitle); ?>
                            </p>
                            <a href="#!" class="secondary-content"><i class="mdi-social-domain"></i></a>
                          </li>
@@ -282,7 +282,7 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
                        <ul id="task-card" class="collection with-header">
                          <li class="collection-header cyan">
                              <h4 class="task-card-title">My Task</h4>
-                             <p class="task-card-date">March 26, 2015</p>
+                             <p class="task-card-date"><?php $date=date_default_timezone_get(); $userZone=date_default_timezone_set($date); $userDate=date('d/m/Y', time()); echo $userDate; ?></p>
                          </li>
                          <li class="collection-item dismissable">
                              <input type="checkbox" id="task1" />
@@ -317,12 +317,6 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
                </div>
                <!--end container-->
              </section>
-
-
-
-
-
-
       </main>
     </div>
 
