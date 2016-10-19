@@ -17,7 +17,8 @@
             //Personal Profile
             $fname = $_POST["ufname"];
             $lname = $_POST["ulname"];
-            $nickname = $_POST["nickname"];
+            $nick = $_POST["nickname"];
+            $nickname = urlencode($nick);
             $skill = $_POST["skills"];
             $dob = $_POST["dob"];
             $pname = $_POST["pname"];

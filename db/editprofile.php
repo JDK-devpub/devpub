@@ -33,7 +33,7 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Material Design Lite</title>
+    <title>Developer | Pub</title>
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -112,7 +112,7 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">EditProfile</span>
+          <span class="mdl-layout-title">Edit Profile</span>
           <div class="mdl-layout-spacer"></div>
           <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
             <i class="material-icons" >search</i>
