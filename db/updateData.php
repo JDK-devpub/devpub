@@ -30,7 +30,8 @@
             $qualification = urlencode($quali);
             $eproject = $_POST["eproject"];
             $emproject = urlencode($eproject);
-            $text = $_POST["text"];
+            $t = addslashes($_POST["text"]);
+            $text = mysqli_real_escape_string($dbconfig,$t);
             $image = $_FILES["image"] ["tmp_name"];
             $imagecontent= addslashes(file_get_contents($image));
 
