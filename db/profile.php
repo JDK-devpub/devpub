@@ -34,7 +34,7 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Material Design Lite</title>
+    <title>Developer | Pub</title>
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -163,15 +163,15 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
                          <div class="row">
                            <div class="col s3 offset-s2">
                                <h4 class="card-title grey-text text-darken-4"><?php echo $fname ?></h4>
-                               <p class="medium-small grey-text"><?php echo $nick ?></p>
+                               <p class="medium-small grey-text"><?php echo urldecode($nick); ?></p>
                            </div>
                            <div class="col s2 center-align">
                                <h4 class="card-title grey-text text-darken-4">Education</h4>
-                               <p class="medium-small grey-text"><?php echo $college ?></p>
+                               <p class="medium-small grey-text"><?php echo urldecode($college); ?></p>
                            </div>
                            <div class="col s2 center-align">
                                <h4 class="card-title grey-text text-darken-4">Workplace</h4>
-                               <p class="medium-small grey-text"><?php echo $company ?></p>
+                               <p class="medium-small grey-text"><?php echo urldecode($company); ?></p>
                            </div>
 
 
@@ -260,7 +260,11 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
                              </span>
                             <div style="float:right;margin-top:-18px">
                            <p>
+<<<<<<< HEAD
                                <?php echo $ptitle ?>
+=======
+                             <?php echo urldecode($ptitle); ?>
+>>>>>>> origin/master
                            </p>
                          </div>
                          </li>
@@ -287,7 +291,7 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
                        <ul id="task-card" class="collection with-header">
                          <li class="collection-header cyan">
                              <h4 class="task-card-title">My Task</h4>
-                             <p class="task-card-date">March 26, 2015</p>
+                             <p class="task-card-date"><?php $date=date_default_timezone_get(); $userZone=date_default_timezone_set($date); $userDate=date('d/m/Y', time()); echo $userDate; ?></p>
                          </li>
                          <li class="collection-item dismissable">
                              <input type="checkbox" id="task1" />
@@ -322,12 +326,6 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
                </div>
                <!--end container-->
              </section>
-
-
-
-
-
-
       </main>
     </div>
 

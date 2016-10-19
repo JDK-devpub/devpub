@@ -183,6 +183,7 @@ while ($row_result = mysqli_fetch_array($profile_content)){
             </div>
           </div>
         </div>
+<<<<<<< HEAD
 
 
 
@@ -194,6 +195,8 @@ while ($row_result = mysqli_fetch_array($profile_content)){
 
 
 
+=======
+>>>>>>> origin/master
       </main>
     </div>
 

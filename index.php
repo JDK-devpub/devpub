@@ -159,7 +159,6 @@ span.psw {
     </style>
     <script src="js/modernizr.js">
     </script>
-
   </head>
   <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -247,8 +246,6 @@ span.psw {
               }
 
             </script>
-
-
                   <!-- Sign Up PoP Up-->
                    <div id="id02" class="modal">
                     <form class="modal-content animate" method="post" action="./db/signup.php">
@@ -560,15 +557,11 @@ span.psw {
                       }
                   }
                   </script>
-
-
-
          <span class="android-mobile-title mdl-layout-title">
                         <img class="android-logo-image" src="images/android-logo.png">
                       </span>
                     </div>
                   </div>
-
 
       <div class="android-content mdl-layout__content">
         <a name="top"></a>
@@ -794,12 +787,13 @@ span.psw {
 </body>
 </html>
 <?php
+  error_reporting(0);
   session_start();
+  include("./db/dbconfig.php");
   if($_SESSION['sid']==session_id())
 		{
 			    echo "<script>
               hideStuff('signup_id', 'login_id');
           </script>";
-		}else{
 		}
 ?>

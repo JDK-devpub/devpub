@@ -10,14 +10,15 @@
       $id = $_SESSION['globalID'];
       if (in_array(strtolower($filetype),$types))
       {
-      	if($filesize <= 200000)
+      	if($filesize <= 2000000)
         {
         if(isset($_POST["submit"]))
         {
             //Personal Profile
             $fname = $_POST["ufname"];
             $lname = $_POST["ulname"];
-            $nickname = $_POST["nickname"];
+            $nick = $_POST["nickname"];
+            $nickname = urlencode($nick);
             $skill = $_POST["skills"];
             $dob = $_POST["dob"];
             $pname = $_POST["pname"];
@@ -30,7 +31,8 @@
             $qualification = urlencode($quali);
             $eproject = $_POST["eproject"];
             $emproject = urlencode($eproject);
-            $text = $_POST["text"];
+            $t = addslashes($_POST["text"]);
+            $text = mysqli_real_escape_string($dbconfig,$t);
             $image = $_FILES["image"] ["tmp_name"];
             $imagecontent= addslashes(file_get_contents($image));
 

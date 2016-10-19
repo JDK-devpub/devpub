@@ -18,6 +18,11 @@
         $last_qual = "No Information";
         $employment_project = "No Information";
         $aboutme = "No Information";
+<<<<<<< HEAD
+=======
+        $image = 'https://lh3.googleusercontent.com/-LR423YiTbOQ/AAAAAAAAAAI/AAAAAAAAAAA/eAMb2whBK-A/photo.jpg';
+        $imagecontent= addslashes(file_get_contents($image));
+>>>>>>> origin/master
 
         if ($password != $conpass){
           echo "Password Didn't Match";
@@ -34,7 +39,7 @@
           }
           else
           {
-              $query = mysqli_query($dbconfig, "INSERT INTO users (fname,lname,email,pass,country,gender)VALUES ('$fname','$lname','$email','$password','$country','$gender')");
+              $query = mysqli_query($dbconfig, "INSERT INTO users (fname,lname,email,pass,country,gender,picture)VALUES ('$fname','$lname','$email','$password','$country','$gender','$imagecontent')");
               if ($query){
                 //header('location:../index.php');
                 $sql_reg = "SELECT id from users where email ='$email'";
