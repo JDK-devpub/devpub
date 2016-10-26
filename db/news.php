@@ -11,9 +11,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="News css/bootstrap.min.css">
+    <link rel="stylesheet" href="News css/font-awesome.css">
+    <link rel="stylesheet" href="News css/style.min.css">
+    <link rel="stylesheet" href="News css/style.css">
     <!-- css -->
-      <link rel="stylesheet" href="css/demo.css">
+      <link rel="stylesheet" href="../css/demo.css">
 
   <!-- modernizr -->
 
@@ -102,8 +107,7 @@ span.psw {
 .loginbtn{
   max-width:150px;
   max-height:150px;
-  margin-top: 20px;
-  margin-left: 10px;
+
   background-color:#49B79E;
 }
 .textboxform{
@@ -157,16 +161,16 @@ span.psw {
 }
 
     </style>
-    <script src="js/modernizr.js">
+    <script src="../js/modernizr.js">
     </script>
   </head>
-  <body>
+  <body style="background-color:#D3D3D3" !important>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
       <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
           <span class="android-title mdl-layout-title">
-            <img class="android-logo-image" src="images/android-logo.png">
+            <img class="android-logo-image" src="../images/android-logo.png" href="index.php">
           </span>
           <!-- Add spacer, to align navigation to the right in desktop -->
           <div class="android-header-spacer mdl-layout-spacer"></div>
@@ -183,37 +187,37 @@ span.psw {
             <nav class="android-navigation mdl-navigation">
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#id02" id="signup_id" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">SignUp</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#id01" id="login_id"  onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="./db/dashboard.php" id="dash_id" style="display:none" >Dashboard</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="dashboard.php" id="dash_id" style="display:none" >Dashboard</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Forum</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="./db/news.php">News</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Market</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="news.php">News</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="newspage.php">Market</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="" id"jobs_id" style="display:block">Jobs</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="./db/logout.php" id="exit_id" style="display:none">Logout</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="logout.php" id="exit_id" style="display:none">Logout</a>
             </nav>
           </div>
           <!-- Login pop up -->
           <div id="id01" class="modal">
                 <form class="modal-content animate" method="post" action="./db/login.php">
                   <div class="container">
-                    <center>
+                    <div class="newsforms" style="float:center">
                       <div style="width:70%">
                         <br><br>
                           <table>
                              <tr>
-                               <td style="width:30%;" ><label><b>Email</b></label></td>
+                               <td style="width:30%;" ><label style="color:white"><b>Email</b></label></td>
                                <td><input class="textboxform" type="email" placeholder="Enter Email" name="lemail" required></td>
                              </tr>
                              <tr>
-                               <td><label><b>Password</b></label></td>
+                               <td><label style="color:white"><b>Password</b></label></td>
                                <td><input class="textboxform" type="password" placeholder="Enter Password" name="lpassword" required></td>
                              </tr>
                           </table>
                       </div>
-                    <button class="loginbtn" name="submit" type="submit" onclick="hideStuff('signup_id', 'login_id')">Login</button>
-                  </center>
+                    <button class="loginbtn" style="float:left;margin-left:100px" name="submit" type="submit" onclick="hideStuff('signup_id', 'login_id')">Login</button>
+                 </div>
                   </div>
-                  <div class="container" style="background-color: #37474f">
-                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                  <div class="container" style="background-color: #37474f;width:70%">
+                    <button type="button" style="float:left" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
                   </div>
                 </form>
            </div>
@@ -251,7 +255,7 @@ span.psw {
                    <div id="id02" class="modal">
                     <form class="modal-content animate" method="post" action="./db/signup.php">
                       <div class="container">
-                        <center>
+                        <div class="newsforms" style="float:center;margin-left:100px" !important>
                           <div style="width:70%">
                             <br><br>
                               <table>
@@ -538,12 +542,13 @@ span.psw {
                                    </td>
                                  </tr>
                               </table>
+                              <br>
                           </div>
-                            <button id="signupjs" name ="submit" class="loginbtn" type="submit">Sign Up</button>
-                        </center>
+                            <button id="signupjs"  style="float:left;margin-left:210px"name ="submit" class="loginbtn" type="submit" !important>Sign Up</button>
+                        </div>
                       </div>
-                      <div class="container" style="background-color: #37474f">
-                        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                      <div class="container" style="background-color: #37474f;width:70%">
+                        <button type="button"  onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
                       </div>
                     </form>
                </div>
@@ -558,199 +563,362 @@ span.psw {
                       }
                   }
                   </script>
-         <span class="android-mobile-title mdl-layout-title">
-                        <img class="android-logo-image" src="images/android-logo.png">
-                      </span>
+
                     </div>
                   </div>
 
       <div class="android-content mdl-layout__content">
         <a name="top"></a>
-        <div class="android-be-together-section mdl-typography--text-center">
-          <div class="logo-font android-slogan">Welcome To DevPub</div>
-          <div class="logo-font android-sub-slogan">Sign up and Become a Dev Today</div>
-          <div class="logo-font android-create-character">
-            <a href=""><img src="images/andy.png"> Develop your Own Program Today</a>
-          </div>
 
-        </div>
-        <div class="android-wear-section">
-          <div class="android-wear-band">
-            <div class="android-wear-band-text">
-              <div class="mdl-typography--display-2 mdl-typography--font-thin">The best of Dev Pub Developers</div>
-              <p class="mdl-typography--headline mdl-typography--font-thin">
-                Dev Pub Encourgaes you to Enjoy the revelent application or softwares today
-              </p>
-              <p>
-                <a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link" href="">
-                  See what's new in Our Dev Store &nbsp;<i class="material-icons">chevron_right</i>
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="android-customized-section">
-          <div class="android-customized-section-text">
-            <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Problem with Developing</div>
-            <p class="mdl-typography--font-light">
-               Check out the new fourm and Our Privelleges given to you. Solve your Problem for Free with Our Developers
-              <br>
-              <a href="" class="android-link mdl-typography--font-light">Solve Your Problem</a>
-            </p>
-          </div>
-          <div class="android-customized-section-image"></div>
-        </div>
-        <div class="android-more-section">
-          <div class="android-section-title mdl-typography--display-1-color-contrast">Most Popular Topics</div>
-          <div class="android-card-container mdl-grid">
 
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp" style="background-color:#37474f">
-              <div class="mdl-card__media">
-                <img src="images/more-from-1.png">
-              </div>
-              <div class="mdl-card__title">
-                 <h4 class="mdl-card__title-text">Programming</h4>
-              </div>
-              <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">Four tips to make your switch to Android quick and easy</span>
-              </div>
-              <div class="mdl-card__actions">
-                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
-                   Make the switch
-                   <i class="material-icons">chevron_right</i>
-                 </a>
+  <!-- Begin Main Wrapper -->
+  <div class="container main-wrapper">
+
+    <!-- End Main Banner -->
+<div class="mag-content clearfix">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="ad728-wrapper">
+        <a href="#">
+
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </section>
+
+          <!-- BEGIN BLOCK 2 -->
+          <section class="news-text-block" style="height:300px" !important>
+            <div class="row">
+              <div class="col-md-12">
+
+                <h3 class="block-title" style="border-bottom-color:49b79e" !important><span><a href="http://az616578.vo.msecnd.net/files/2016/04/14/635962722359877854950785968_Technology.png">Tech Center</a></span></h3>
+
+                <article class="news-block big-block">
+                  <a href="#" class="overlay-link">
+                    <figure class="image-overlay">
+                      <img src="http://az616578.vo.msecnd.net/files/2016/04/14/635962722359877854950785968_Technology.png" alt="">
+                    </figure>
+                  </a>
+                  <a href="#" class="category">
+                    Advice
+                  </a>
+                  <header class="news-details"style="margin-top:-150px;background: rgba(0,0,0,.5)" !important>
+                    <h3 class="news-title" >
+                      <a href="#"  style="color:#49b79e" !important>
+                        7 Tips for Creating a Functional Home Workspace
+                      </a>
+                    </h3>
+                    <p>I can't get involved! I've got work to do! It's not that I like the Empire, I hate it, but there's nothing I can do about it right now. It's such a long way from here. Hokey religions and ancient weapons are no match for a good blaster at your side, kid. I'm surprised you had the courage to take the responsibility yourself.</p>
+                    <p class="simple-share">
+                      by <a href="http://az616578.vo.msecnd.net/files/2016/04/14/635962722359877854950785968_Technology.png"><b>John Doe</b></a> -
+                      <span class="article-date"><i class="fa fa-clock-o"></i> 3 minutes ago</span>
+                    </p>
+                  </header>
+                </article><!-- News block -->
               </div>
             </div>
 
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp" style="background-color:#37474f" >
-              <div class="mdl-card__media">
-                <img src="images/more-from-1.png">
+            <div class="row">
+              <div class="col-md-6">
+                <article class="news-block small-block">
+                  <a href="http://az616578.vo.msecnd.net/files/2016/04/14/635962722359877854950785968_Technology.png" class="overlay-link">
+                    <figure class="image-overlay">
+                      <img src="img/big-thumb/big_thumb42.jpg" alt="">
+                    </figure>
+                  </a>
+                  <a href="http://az616578.vo.msecnd.net/files/2016/04/14/635962722359877854950785968_Technology.png" class="category">
+                    Travel
+                  </a>
+                  <header class="news-details" style="margin-top:-70px;background: rgba(0,0,0,.5)" !important>
+                    <h3 class="news-title">
+                      <a href="#" style="color:#49b79e" !important>
+                        6 Tips Before Traveling Internationally
+                      </a>
+                    </h3>
+                    <p class="simple-share">
+                      by <a href="http://az616578.vo.msecnd.net/files/2016/04/14/635962722359877854950785968_Technology.png"><b>John Doe</b></a> -
+                      <span class="article-date"><i class="fa fa-clock-o"></i> 46 minutes ago</span>
+                    </p>
+                  </header>
+                </article><!-- News block -->
               </div>
-              <div class="mdl-card__title">
-                 <h4 class="mdl-card__title-text">Web Development</h4>
-              </div>
-              <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography-Development-subhead">Four tips to make your switch to Android quick and easy</span>
-              </div>
-              <div class="mdl-card__actions">
-                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
-                   Make the switch
-                   <i class="material-icons">chevron_right</i>
-                 </a>
+
+              <div class="col-md-6">
+                <article class="news-block small-block">
+                  <a href="#" class="overlay-link">
+                    <figure class="image-overlay">
+                      <img src="img/big-thumb/big_thumb43.jpg" alt="">
+                    </figure>
+                  </a>
+                  <a href="http://az616578.vo.msecnd.net/files/2016/04/14/635962722359877854950785968_Technology.png" class="category">
+                    Advice
+                  </a>
+                  <div class="news-details" style="margin-top:-70px;background: rgba(0,0,0,.5)" !important>
+                    <h3 class="news-title">
+                      <a href="http://az616578.vo.msecnd.net/files/2016/04/14/635962722359877854950785968_Technology.png"  style="color:#49b79e" !important>
+                        How To Be More Friendly And Social
+                      </a>
+                    </h3>
+                    <p class="simple-share">
+                      by <a href="#"><b>John Doe</b></a> -
+                      <span class="article-date"><i class="fa fa-clock-o"></i> 2 hours ago</span>
+                    </p>
+                  </div>
+                </article><!-- News block -->
               </div>
             </div>
 
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp" style="background-color:#37474f" >
-              <div class="mdl-card__media">
-                <img src="images/more-from-1.png">
+            <div class="row">
+              <div class="col-md-6">
+                <article class="news-block small-block">
+                  <a href="#" class="overlay-link">
+                    <figure class="image-overlay">
+                      <img src="img/big-thumb/big_thumb44.jpg" alt="">
+                    </figure>
+                  </a>
+                  <a href="#" class="category">
+                    Fashion
+                  </a>
+                  <header class="news-details" style="margin-top:-70px;background: rgba(0,0,0,.5)" !important>
+                    <h3 class="news-title">
+                      <a href="#"  style="color:#49b79e" !important>
+                        5 Spring Outfits For Under $200
+                      </a>
+                    </h3>
+                    <p class="simple-share">
+                      by <a href="#"><b>John Doe</b></a> -
+                      <span class="article-date"><i class="fa fa-clock-o"></i> 4 hours ago</span>
+                    </p>
+                  </header>
+                </article><!-- News block -->
               </div>
-              <div class="mdl-card__title">
-                 <h4 class="mdl-card__title-text">Data Struture</h4>
+
+              <div class="col-md-6">
+                <article class="news-block small-block">
+                  <a href="#" class="overlay-link">
+                    <figure class="image-overlay">
+                      <span class="play-button"><i class="fa fa-play"></i></span>
+                      <img src="img/big-thumb/big_thumb45.jpg" alt="">
+                    </figure>
+                  </a>
+                  <a href="#" class="category">
+                    Love
+                  </a>
+                  <header class="news-details" style="margin-top:-70px;background: rgba(0,0,0,.5)" !important>
+                    <h3 class="news-title"  style="color:#49b79e" !important>
+                      <a href="#" style="color:#49b79e" !important>
+                        9 Reasons To Run in the Morning
+                      </a>
+                    </h3>
+                    <p class="simple-share">
+                      by <a href="#"><b>John Doe</b></a> -
+                      <span class="article-date"><i class="fa fa-clock-o"></i> 6 hours ago</span>
+                    </p>
+                  </header>
+                </article><!-- News block -->
               </div>
-              <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">Four tips to make your switch to Android quick and easy</span>
-              </div>
-              <div class="mdl-card__actions">
-                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
-                   Make the switch
-                   <i class="material-icons">chevron_right</i>
-                 </a>
-              </div>
+
             </div>
 
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp" style="background-color:#37474f" >
-              <div class="mdl-card__media">
-                <img src="images/more-from-1.png">
+            <div class="row">
+              <div class="col-md-6">
+                <article class="news-block small-block">
+                  <a href="#" class="overlay-link">
+                    <figure class="image-overlay">
+                      <img src="img/big-thumb/big_thumb46.jpg" alt="">
+                    </figure>
+                  </a>
+                  <a href="#" class="category">
+                    Advice
+                  </a>
+                  <header class="news-details" style="margin-top:-70px;background: rgba(0,0,0,.5)" !important>
+                    <h3 class="news-title">
+                      <a href="#"  style="color:#49b79e" !important>
+                        Never Ask a Busy Person to Lunch
+                      </a>
+                    </h3>
+                    <p class="simple-share">
+                      by <a href="#"><b>John Doe</b></a> -
+                      <span class="article-date"><i class="fa fa-clock-o"></i> 4 hours ago</span>
+                    </p>
+                  </header>
+                </article><!-- News block -->
               </div>
-              <div class="mdl-card__title">
-                 <h4 class="mdl-card__title-text">Algorithm</h4>
+
+              <div class="col-md-6">
+                <article class="news-block small-block">
+                  <a href="#" class="overlay-link">
+                    <figure class="image-overlay">
+                      <span class="play-button"><i class="fa fa-play"></i></span>
+                      <img src="img/big-thumb/big_thumb47.jpg" alt="">
+                    </figure>
+                  </a>
+                  <a href="#" class="category">
+                    Food
+                  </a>
+                  <header class="news-details" style="margin-top:-70px;background: rgba(0,0,0,.5)" !important>
+                    <h3 class="news-title">
+                      <a href="#"  style="color:#49b79e" !important>
+                        How to Make Perfect Homemade Pizza
+                      </a>
+                    </h3>
+                    <p class="simple-share">
+                      by <a href="#"><b>John Doe</b></a> -
+                      <span class="article-date"><i class="fa fa-clock-o"></i> 12 hours ago</span>
+                    </p>
+                  </header>
+                </article><!-- News block -->
               </div>
-              <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">Four tips to make your switch to Android quick and easy</span>
+
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <article class="news-block small-block">
+                  <a href="#" class="overlay-link">
+                    <figure class="image-overlay">
+                      <img src="img/big-thumb/big_thumb46.jpg" alt="">
+                    </figure>
+                  </a>
+                  <a href="#" class="category">
+                    Advice
+                  </a>
+                  <header class="news-details" style="margin-top:-70px;background: rgba(0,0,0,.5)" !important>
+                    <h3 class="news-title">
+                      <a href="#"  style="color:#49b79e" !important>
+                        Never Ask a Busy Person to Lunch
+                      </a>
+                    </h3>
+                    <p class="simple-share">
+                      by <a href="#"><b>John Doe</b></a> -
+                      <span class="article-date"><i class="fa fa-clock-o"></i> 4 hours ago</span>
+                    </p>
+                  </header>
+                </article><!-- News block -->
               </div>
-              <div class="mdl-card__actions">
-                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
-                   Make the switch
-                   <i class="material-icons">chevron_right</i>
-                 </a>
+
+              <div class="col-md-6">
+                <article class="news-block small-block">
+                  <a href="#" class="overlay-link">
+                    <figure class="image-overlay">
+                      <span class="play-button"><i class="fa fa-play"></i></span>
+                      <img src="img/big-thumb/big_thumb47.jpg" alt="">
+                    </figure>
+                  </a>
+                  <a href="#" class="category">
+                    Food
+                  </a>
+                  <header class="news-details" style="margin-top:-70px;background: rgba(0,0,0,.5)" !important>
+                    <h3 class="news-title">
+                      <a href="#"  style="color:#49b79e" !important>
+                        How to Make Perfect Homemade Pizza
+                      </a>
+                    </h3>
+                    <p class="simple-share">
+                      by <a href="#"><b>John Doe</b></a> -
+                      <span class="article-date"><i class="fa fa-clock-o"></i> 12 hours ago</span>
+                    </p>
+                  </header>
+                </article><!-- News block -->
               </div>
+
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <article class="news-block small-block">
+                  <a href="#" class="overlay-link">
+                    <figure class="image-overlay">
+                      <img src="img/big-thumb/big_thumb46.jpg" alt="">
+                    </figure>
+                  </a>
+                  <a href="#" class="category">
+                    Advice
+                  </a>
+                  <header class="news-details" style="margin-top:-70px;background: rgba(0,0,0,.5)" !important>
+                    <h3 class="news-title">
+                      <a href="#"  style="color:#49b79e" !important>
+                        Never Ask a Busy Person to Lunch
+                      </a>
+                    </h3>
+                    <p class="simple-share">
+                      by <a href="#"><b>John Doe</b></a> -
+                      <span class="article-date"><i class="fa fa-clock-o"></i> 4 hours ago</span>
+                    </p>
+                  </header>
+                </article><!-- News block -->
+              </div>
+
+              <div class="col-md-6">
+                <article class="news-block small-block">
+                  <a href="#" class="overlay-link">
+                    <figure class="image-overlay">
+                      <span class="play-button"><i class="fa fa-play"></i></span>
+                      <img src="img/big-thumb/big_thumb47.jpg" alt="">
+                    </figure>
+                  </a>
+                  <a href="#" class="category">
+                    Food
+                  </a>
+                  <header class="news-details" style="margin-top:-70px;background: rgba(0,0,0,.5)" !important>
+                    <h3 class="news-title">
+                      <a href="#"  style="color:#49b79e" !important>
+                        How to Make Perfect Homemade Pizza
+                      </a>
+                    </h3>
+                    <p class="simple-share">
+                      by <a href="#"><b>John Doe</b></a> -
+                      <span class="article-date"><i class="fa fa-clock-o"></i> 12 hours ago</span>
+                    </p>
+                  </header>
+                </article><!-- News block -->
+              </div>
+
             </div>
 
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp" style="background-color:#37474f" >
-              <div class="mdl-card__media">
-                <img src="images/more-from-1.png">
-              </div>
-              <div class="mdl-card__title">
-                 <h4 class="mdl-card__title-text">Mobile Development</h4>
-              </div>
-              <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">Four tips to make your switch to Android quick and easy</span>
-              </div>
-              <div class="mdl-card__actions">
-                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
-                   Make the switch
-                   <i class="material-icons">chevron_right</i>
-                 </a>
-              </div>
-            </div>
+          </section>
+          <!-- END BLOCK 2 -->
 
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp" style="background-color:#37474f" >
-              <div class="mdl-card__media">
-                <img src="images/more-from-4.png">
-              </div>
-              <div class="mdl-card__title">
-                 <h4 class="mdl-card__title-text">Desktop Application</h4>
-              </div>
-              <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">Turn the little green Android mascot into you, your friends, anyone!</span>
-              </div>
-              <div class="mdl-card__actions">
-                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
-                   androidify.com
-                   <i class="material-icons">chevron_right</i>
-                 </a>
-              </div>
-            </div>
+        </div><!-- End Left big column -->
 
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp" style="background-color:#37474f" >
-              <div class="mdl-card__media">
-                <img src="images/more-from-2.png">
-              </div>
-              <div class="mdl-card__title">
-                 <h4 class="mdl-card__title-text">Cryptology</h4>
-              </div>
-              <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">A clean, simple, customisable home screen that comes with the power of Google Now: Traffic alerts, weather and much more, just a swipe away.</span>
-              </div>
-              <div class="mdl-card__actions">
-                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
-                   Download now
-                   <i class="material-icons">chevron_right</i>
-                 </a>
-              </div>
-            </div>
 
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp" style="background-color:#37474f" >
-              <div class="mdl-card__media">
-                <img src="images/more-from-3.png">
-              </div>
-              <div class="mdl-card__title">
-                 <h4 class="mdl-card__title-text">Game Development</h4>
-              </div>
-              <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">Hail a taxi, find a recipe, run through a temple – Google Play has all the apps and games that let you make your Android device uniquely yours.</span>
-              </div>
-              <div class="mdl-card__actions">
-                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
-                   Find apps
-                   <i class="material-icons">chevron_right</i>
-                 </a>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <footer class="android-footer mdl-mega-footer">
+
+
+<!-- Jquery js -->
+
+<script src="js/jquery-1.11.2.min.js"></script>
+
+
+
+<!-- Modernizr -->
+
+<script src="js/modernizr.min.js"></script>
+
+
+
+<!-- Bootstrap js -->
+
+<script src="plugins/bootstrap/js/bootstrap.js"></script>
+
+
+
+<!-- Google map api -->
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
+
+
+<!-- Theme js -->
+
+<script src="js/script.min.js"></script>
+
+
+
+
+
+        <footer class="android-footer mdl-mega-footer" style="float:bottom" !important>
           <div class="mdl-mega-footer--top-section">
             <div class="text-center center-block">
                 <div class="component">
@@ -783,9 +951,9 @@ span.psw {
       </div>
     </div>
     <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
-  </body>
-</html>
 </body>
+</html>
+
 </html>
 <?php
   error_reporting(0);

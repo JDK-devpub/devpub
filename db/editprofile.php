@@ -9,7 +9,7 @@ while ($row_result = mysqli_fetch_array($profile_content)){
   $lname = $row_result['lname'];
   $email = $row_result['email'];
   $nick = $row_result['nickname'];
-  $skill = $row_result['sname'];
+//  $skill = $row_result['sname'];
   $dob = $row_result['dob'];
   $image = $row_result['picture'];
 }
@@ -22,9 +22,15 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
   $employment_project = $row['employment_project'];
   $aboutme = $row['aboutme'];
 }
+$skill_info = mysqli_query($dbconfig,"select * from spossessed where id ='$id'");
+while ($row_skill = mysqli_fetch_array($skill_info)){
+  $sk[] = $row_skill ['sname'];
+  $skill=implode(",",$sk);
+}
 }else{
   header('location:error.php');
 }
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -47,6 +53,20 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
  <meta name="msapplication-TileColor" content="#00bcd4">
  <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
  <!-- For Windows Phone -->
+
+<!-- For friendly search -->
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script>
+$(function() {
+
+  $( "#skills" ).autocomplete({
+    source: 'livesearch.php'
+
+  });
+});
+</script>
 
 
  <!-- CORE CSS-->
@@ -133,6 +153,7 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
             <span><?php echo $email ?></span>
           </div>
         </header>
+
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
           <a class="mdl-navigation__link" href="../index.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
           <a class="mdl-navigation__link" href="profile.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">person</i>Profile</a>
@@ -145,6 +166,8 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
           <a class="mdl-navigation__link" href="logout.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">exit_to_app</i><span >Logout</span></a>
         </nav>
       </div>
+
+
       <main class="mdl-layout__content mdl-color--grey-100" stye="display:block">
         <section class="edit_forms1">
             <div class="col s12 m12 l6">
@@ -171,7 +194,14 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
                    <div class="input-field col s12">
                         <label for="skills">Skills</label>
                         <br>
-                     <input placeholder="Type skill 1,skill 2,..." name="skills" type="text" value="<?php echo "$skill"; ?>" required>
+                     <input placeholder="Type skill 1,skill 2,..." name="skills" id="skills" type="text" value="<?php
+                     if(!empty($skill))
+                     {
+                       echo $skill;
+                     }
+                     else{
+                       echo "No information";
+                     } ?>" required>
                    </div>
                    <div class="input-field col s12">
                         <label for="first_name">Birthdate</label>
@@ -210,7 +240,7 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
                     <input placeholder="College Or University Name" name="college" type="text" value="<?php echo urldecode($college); ?>">
                   </div>
                   <div class="input-field col s12">
-                       <label for="skills">Last Educational Qualification</label>
+                       <label for="qualifications">Last Educational Qualification</label>
                        <br>
                     <input placeholder="Type skill 1,skill 2" name="quali" type="text" value="<?php echo urldecode($last_qual); ?>">
                   </div>

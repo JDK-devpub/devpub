@@ -5,6 +5,7 @@ body {
   font-family: 'Open Sans';
   font-weight: 400;
   text-align: center;
+  background-color: #D3D3D3;
 }
 .blocks {
   position: fixed;

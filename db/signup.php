@@ -18,11 +18,8 @@
         $last_qual = "No Information";
         $employment_project = "No Information";
         $aboutme = "No Information";
-<<<<<<< HEAD
-=======
         $image = 'https://lh3.googleusercontent.com/-LR423YiTbOQ/AAAAAAAAAAI/AAAAAAAAAAA/eAMb2whBK-A/photo.jpg';
         $imagecontent= addslashes(file_get_contents($image));
->>>>>>> origin/master
 
         if ($password != $conpass){
           echo "Password Didn't Match";

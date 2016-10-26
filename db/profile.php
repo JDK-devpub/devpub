@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 include ("dbconfig.php");
 session_start();
 if(isset($_SESSION['globalID'])) {
@@ -9,7 +10,6 @@ while ($row_result = mysqli_fetch_array($profile_content)){
   $lname = $row_result['lname'];
   $email = $row_result['email'];
   $nick = $row_result['nickname'];
-  $skill = $row_result['sname'];
   $dob = $row_result['dob'];
   $country = $row_result['country'];
   $image = $row_result['picture'];
@@ -22,6 +22,11 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
   $last_qual = $row['last_qual'];
   $employment_project = $row['employment_project'];
   $aboutme = $row['aboutme'];
+}
+$skill_info = mysqli_query($dbconfig,"select * from spossessed where id ='$id'");
+while ($row_skill = mysqli_fetch_array($skill_info)){
+  $sk[] = $row_skill ['sname'];
+  $skill=implode(",",$sk);
 }
 }else{
   header('location:error.php');
@@ -192,16 +197,13 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
                        </div> -->
                    </div >
 
-                     <div class="card light-blue" style="float:right;width:900px;height:500px">
+                     <div class="card light-blue" style="float:right;width:605px;height:500px">
                        <div class="card-content white-text">
                          <span class="card-title">About Me!</span>
                          <p><?php echo $aboutme ?></p>
                        </div>
                      </div>
-
                    <!--/ profile-page-header -->
-
-
                    <!-- profile-page-content -->
                    <div id="profile-page-content" class="row" style="margin-top:-514px">
                      <!-- profile-page-sidebar-->
@@ -238,7 +240,7 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
                          </li>
                        </ul>
                        <ul id="profile-page-about-feed" class="collection z-depth-1">
-                         <li class="collection-item avatar" style="height:65px">
+                         <li class="collection-item avatar" style="height:75px">
                              <span class="title" style="font-weight:bold">
                                 <i class="material-icons mdl-list__item-avatar" style="margin-left:-60px">school</i>
                                 <div style="margin-top:-28px;margin-left:-8px">
@@ -247,11 +249,12 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
                              </span>
                             <div style="float:right;margin-top:-18px">
                            <p>
+                             <br>
                              <?php echo urldecode($last_qual); ?>
                            </p>
                          </div>
                          </li>
-                         <li class="collection-item avatar" style="height:65px">
+                         <li class="collection-item avatar" style="height:75px">
                              <span class="title" style="font-weight:bold">
                                 <i class="material-icons mdl-list__item-avatar" style="margin-left:-60px">folder</i>
                                 <div style="margin-top:-28px;margin-left:-8px">
@@ -260,15 +263,12 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
                              </span>
                             <div style="float:right;margin-top:-18px">
                            <p>
-<<<<<<< HEAD
-                               <?php echo $ptitle ?>
-=======
+                             <br>
                              <?php echo urldecode($ptitle); ?>
->>>>>>> origin/master
                            </p>
                          </div>
                          </li>
-                         <li class="collection-item avatar" style="height:65px">
+                         <li class="collection-item avatar" style="height:75px">
                              <span class="title" style="font-weight:bold">
                                 <i class="material-icons mdl-list__item-avatar" style="margin-left:-60px">build</i>
                                 <div style="margin-top:-28px;margin-left:-8px">
@@ -277,13 +277,11 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
                              </span>
                             <div style="float:right;margin-top:-18px">
                            <p>
+                             <br>
                               <?php echo urldecode($employment_project); ?>
                            </p>
                          </div>
                          </li>
-
-
-
                        </ul>
                        <!-- Profile feed  -->
 
@@ -319,10 +317,23 @@ while ($row = mysqli_fetch_array($profile_exp_info)){
                        </ul>
                      </div>
                          </div>
+                         <div class="card light-white" style="width:710px;height:250px">
+                           <div class="card-content black-text">
+                             <span class="card-title" style="color:black" !important>Employment History</span>
+                             <p><?php echo $job_history ?></p>
+                           </div>
+                         </div>
+                         <div class="card light-white" style="width:710px;height:250px">
+                           <div class="card-content black-text">
+                             <span class="card-title" style="color:black" !important>Project History</span>
+                             <p><?php echo $job_history ?></p>
+                           </div>
+                         </div>
                        </div>
                    </div>
                  </div>
                </div>
+
                </div>
                <!--end container-->
              </section>

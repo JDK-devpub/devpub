@@ -183,20 +183,6 @@ while ($row_result = mysqli_fetch_array($profile_content)){
             </div>
           </div>
         </div>
-<<<<<<< HEAD
-
-
-
-                <!-- end of user Forums -->
-
-                <!-- end of user Foruns -->
-
-
-
-
-
-=======
->>>>>>> origin/master
       </main>
     </div>
 

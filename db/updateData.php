@@ -37,15 +37,20 @@
             $imagecontent= addslashes(file_get_contents($image));
 
             $sql_one = "UPDATE users
-            SET fname = '$fname', lname='$lname', nickname = '$nickname', sname ='$skill', dob ='$dob', picture= '$imagecontent'
+            SET fname = '$fname', lname='$lname', nickname = '$nickname', dob ='$dob', picture= '$imagecontent'
             WHERE id = '$id'";
 
             $sql_two = "UPDATE user_education
             SET ptitle = '$projectname', company='$companyname', college = '$collegename', last_qual='$qualification', employment_project ='$emproject', aboutme = '$text'
             WHERE id = '$id'";
 
+            //insert into spossessed
+            $sql_three = "INSERT INTO spossessed
+            VALUES('$id','$skill')";
+
             $query_one = mysqli_query($dbconfig, $sql_one);
             $query_two = mysqli_query($dbconfig, $sql_two);
+            $query_three = mysqli_query($dbconfig, $sql_three);
 
             if (!$query_one){
               echo "Query One Problem";
