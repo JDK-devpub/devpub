@@ -1,3 +1,7 @@
+<?php
+  include ("dbconfig.php");
+  session_start();
+?>
 <!DOCTYPE <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -187,24 +191,25 @@ span.psw {
             <nav class="android-navigation mdl-navigation">
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#id02" id="signup_id" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">SignUp</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#id01" id="login_id"  onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="./../index.php">Home</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="dashboard.php" id="dash_id" style="display:none" >Dashboard</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Forum</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="news.php">News</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="newspage.php">Market</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="" id"jobs_id" style="display:block">Jobs</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="jobs.php" style="display:block">Jobs</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="logout.php" id="exit_id" style="display:none">Logout</a>
             </nav>
           </div>
           <!-- Login pop up -->
           <div id="id01" class="modal">
-                <form class="modal-content animate" method="post" action="./db/login.php">
+                <form class="modal-content animate" method="post" action="login.php">
                   <div class="container">
                     <div class="newsforms" style="float:center">
-                      <div style="width:70%">
+                      <div style="width:50%">
                         <br><br>
                           <table>
                              <tr>
-                               <td style="width:30%;" ><label style="color:white"><b>Email</b></label></td>
+                               <td style="width:40%;" ><label style="color:white"><b>Email</b></label></td>
                                <td><input class="textboxform" type="email" placeholder="Enter Email" name="lemail" required></td>
                              </tr>
                              <tr>
@@ -213,10 +218,10 @@ span.psw {
                              </tr>
                           </table>
                       </div>
-                    <button class="loginbtn" style="float:left;margin-left:100px" name="submit" type="submit" onclick="hideStuff('signup_id', 'login_id')">Login</button>
+                    <button class="loginbtn" style="float:left;margin-left:120px" name="submit" type="submit" onclick="hideStuff('signup_id', 'login_id')">Login</button>
                  </div>
                   </div>
-                  <div class="container" style="background-color: #37474f;width:70%">
+                  <div class="container" style="background-color: #37474f;width:40%">
                     <button type="button" style="float:left" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
                   </div>
                 </form>
@@ -253,10 +258,10 @@ span.psw {
             </script>
                   <!-- Sign Up PoP Up-->
                    <div id="id02" class="modal">
-                    <form class="modal-content animate" method="post" action="./db/signup.php">
+                    <form class="modal-content animate" method="post" action="signup.php">
                       <div class="container">
-                        <div class="newsforms" style="float:center;margin-left:100px" !important>
-                          <div style="width:70%">
+                        <div class="newsforms" style="float:center;" !important>
+                          <div style="width:30%">
                             <br><br>
                               <table>
                                  <tr>
@@ -544,7 +549,7 @@ span.psw {
                               </table>
                               <br>
                           </div>
-                            <button id="signupjs"  style="float:left;margin-left:210px"name ="submit" class="loginbtn" type="submit" !important>Sign Up</button>
+                            <button id="signupjs"  style="float:left;margin-left:120px"name ="submit" class="loginbtn" type="submit" !important>Sign Up</button>
                         </div>
                       </div>
                       <div class="container" style="background-color: #37474f;width:70%">
@@ -566,21 +571,16 @@ span.psw {
 
                     </div>
                   </div>
-
       <div class="android-content mdl-layout__content">
         <a name="top"></a>
-
-
   <!-- Begin Main Wrapper -->
   <div class="container main-wrapper">
-
     <!-- End Main Banner -->
 <div class="mag-content clearfix">
   <div class="row">
     <div class="col-md-12">
       <div class="ad728-wrapper">
         <a href="#">
-
         </a>
       </div>
     </div>
@@ -588,337 +588,68 @@ span.psw {
 </div>
 
           </section>
-
           <!-- BEGIN BLOCK 2 -->
-          <section class="news-text-block" style="height:300px" !important>
-            <div class="row">
-              <div class="col-md-12">
+          <h3 class="block-title" style="border-bottom-color:49b79e" !important><span><a href="">Tech Center</a></span></h3>
+                    <?php
+                        $sql = ("select * from news");
+                        $news = mysqli_query($dbconfig,$sql);
 
-                <h3 class="block-title" style="border-bottom-color:49b79e" !important><span><a href="http://az616578.vo.msecnd.net/files/2016/04/14/635962722359877854950785968_Technology.png">Tech Center</a></span></h3>
+                        if(!$news)
+                        {
+                            echo 'The categories could not be displayed, please try again later.';
+                            echo 'Error : ' . mysql_error();
+                        }
+                        while ($row_news = mysqli_fetch_assoc($news)){
+                              $news_id = $row_news['news_id'];
+                              $news_image = $row_news['news_image'];
+                              $news_title = $row_news['news_title'];
+                              $news_short_description = $row_news['news_short_description'];
+                              $news_full_content = $row_news['news_full_content'];
+                              $news_author = $row_news['news_author'];
+                              $news_published_on = $row_news['news_published_on'];
 
-                <article class="news-block big-block">
-                  <a href="#" class="overlay-link">
-                    <figure class="image-overlay">
-                      <img src="http://az616578.vo.msecnd.net/files/2016/04/14/635962722359877854950785968_Technology.png" alt="">
-                    </figure>
-                  </a>
-                  <a href="#" class="category">
-                    Advice
-                  </a>
-                  <header class="news-details"style="margin-top:-150px;background: rgba(0,0,0,.5)" !important>
-                    <h3 class="news-title" >
-                      <a href="#"  style="color:#49b79e" !important>
-                        7 Tips for Creating a Functional Home Workspace
-                      </a>
-                    </h3>
-                    <p>I can't get involved! I've got work to do! It's not that I like the Empire, I hate it, but there's nothing I can do about it right now. It's such a long way from here. Hokey religions and ancient weapons are no match for a good blaster at your side, kid. I'm surprised you had the courage to take the responsibility yourself.</p>
-                    <p class="simple-share">
-                      by <a href="http://az616578.vo.msecnd.net/files/2016/04/14/635962722359877854950785968_Technology.png"><b>John Doe</b></a> -
-                      <span class="article-date"><i class="fa fa-clock-o"></i> 3 minutes ago</span>
-                    </p>
-                  </header>
-                </article><!-- News block -->
-              </div>
-            </div>
+                          echo ' <section class="news-text-block" style="margin:auto;height:600px;width:605px" !important> ';
+                          echo ' <div class="demo-card-wide mdl-card mdl-shadow--2dp" style="width:650px;height:500px"> ';
+                          echo ' <div class="card-image"> ';
+                          echo ' <img style = "height:370px;width:700px" src="data:image/jpeg;base64,'.base64_encode($news_image).'">';
+                          echo ' <span class="card-title" style="margin:auto;color:black;font-size:20px;font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;">'.$news_title.'</span> ';
+                          echo ' </div>';
+                          echo ' <div class="card light-white" style="float:right;width:605px;height:150px">';
+                          echo ' <div class="card-content black-text">';
+                          echo ' <span class="card-title" style="color:grey;">'.$news_short_description.'</span>';
+                          echo ' <p style="margin-left:350px"> Author : '.$news_author.' - ' .$news_published_on. '</p>';
+                          echo ' <div class="mdl-card__actions mdl-card--border">';
+                          echo ' <a style="float:right" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="./newspage.php?news_id='.$news_id.'">Go to link</a>';
+                          echo ' </div>';
+                          echo ' </div>';
+                          echo ' </div>';
+                          echo ' </div>';
+                          echo ' </section>';
 
-            <div class="row">
-              <div class="col-md-6">
-                <article class="news-block small-block">
-                  <a href="http://az616578.vo.msecnd.net/files/2016/04/14/635962722359877854950785968_Technology.png" class="overlay-link">
-                    <figure class="image-overlay">
-                      <img src="img/big-thumb/big_thumb42.jpg" alt="">
-                    </figure>
-                  </a>
-                  <a href="http://az616578.vo.msecnd.net/files/2016/04/14/635962722359877854950785968_Technology.png" class="category">
-                    Travel
-                  </a>
-                  <header class="news-details" style="margin-top:-70px;background: rgba(0,0,0,.5)" !important>
-                    <h3 class="news-title">
-                      <a href="#" style="color:#49b79e" !important>
-                        6 Tips Before Traveling Internationally
-                      </a>
-                    </h3>
-                    <p class="simple-share">
-                      by <a href="http://az616578.vo.msecnd.net/files/2016/04/14/635962722359877854950785968_Technology.png"><b>John Doe</b></a> -
-                      <span class="article-date"><i class="fa fa-clock-o"></i> 46 minutes ago</span>
-                    </p>
-                  </header>
-                </article><!-- News block -->
-              </div>
-
-              <div class="col-md-6">
-                <article class="news-block small-block">
-                  <a href="#" class="overlay-link">
-                    <figure class="image-overlay">
-                      <img src="img/big-thumb/big_thumb43.jpg" alt="">
-                    </figure>
-                  </a>
-                  <a href="http://az616578.vo.msecnd.net/files/2016/04/14/635962722359877854950785968_Technology.png" class="category">
-                    Advice
-                  </a>
-                  <div class="news-details" style="margin-top:-70px;background: rgba(0,0,0,.5)" !important>
-                    <h3 class="news-title">
-                      <a href="http://az616578.vo.msecnd.net/files/2016/04/14/635962722359877854950785968_Technology.png"  style="color:#49b79e" !important>
-                        How To Be More Friendly And Social
-                      </a>
-                    </h3>
-                    <p class="simple-share">
-                      by <a href="#"><b>John Doe</b></a> -
-                      <span class="article-date"><i class="fa fa-clock-o"></i> 2 hours ago</span>
-                    </p>
-                  </div>
-                </article><!-- News block -->
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6">
-                <article class="news-block small-block">
-                  <a href="#" class="overlay-link">
-                    <figure class="image-overlay">
-                      <img src="img/big-thumb/big_thumb44.jpg" alt="">
-                    </figure>
-                  </a>
-                  <a href="#" class="category">
-                    Fashion
-                  </a>
-                  <header class="news-details" style="margin-top:-70px;background: rgba(0,0,0,.5)" !important>
-                    <h3 class="news-title">
-                      <a href="#"  style="color:#49b79e" !important>
-                        5 Spring Outfits For Under $200
-                      </a>
-                    </h3>
-                    <p class="simple-share">
-                      by <a href="#"><b>John Doe</b></a> -
-                      <span class="article-date"><i class="fa fa-clock-o"></i> 4 hours ago</span>
-                    </p>
-                  </header>
-                </article><!-- News block -->
-              </div>
-
-              <div class="col-md-6">
-                <article class="news-block small-block">
-                  <a href="#" class="overlay-link">
-                    <figure class="image-overlay">
-                      <span class="play-button"><i class="fa fa-play"></i></span>
-                      <img src="img/big-thumb/big_thumb45.jpg" alt="">
-                    </figure>
-                  </a>
-                  <a href="#" class="category">
-                    Love
-                  </a>
-                  <header class="news-details" style="margin-top:-70px;background: rgba(0,0,0,.5)" !important>
-                    <h3 class="news-title"  style="color:#49b79e" !important>
-                      <a href="#" style="color:#49b79e" !important>
-                        9 Reasons To Run in the Morning
-                      </a>
-                    </h3>
-                    <p class="simple-share">
-                      by <a href="#"><b>John Doe</b></a> -
-                      <span class="article-date"><i class="fa fa-clock-o"></i> 6 hours ago</span>
-                    </p>
-                  </header>
-                </article><!-- News block -->
-              </div>
-
-            </div>
-
-            <div class="row">
-              <div class="col-md-6">
-                <article class="news-block small-block">
-                  <a href="#" class="overlay-link">
-                    <figure class="image-overlay">
-                      <img src="img/big-thumb/big_thumb46.jpg" alt="">
-                    </figure>
-                  </a>
-                  <a href="#" class="category">
-                    Advice
-                  </a>
-                  <header class="news-details" style="margin-top:-70px;background: rgba(0,0,0,.5)" !important>
-                    <h3 class="news-title">
-                      <a href="#"  style="color:#49b79e" !important>
-                        Never Ask a Busy Person to Lunch
-                      </a>
-                    </h3>
-                    <p class="simple-share">
-                      by <a href="#"><b>John Doe</b></a> -
-                      <span class="article-date"><i class="fa fa-clock-o"></i> 4 hours ago</span>
-                    </p>
-                  </header>
-                </article><!-- News block -->
-              </div>
-
-              <div class="col-md-6">
-                <article class="news-block small-block">
-                  <a href="#" class="overlay-link">
-                    <figure class="image-overlay">
-                      <span class="play-button"><i class="fa fa-play"></i></span>
-                      <img src="img/big-thumb/big_thumb47.jpg" alt="">
-                    </figure>
-                  </a>
-                  <a href="#" class="category">
-                    Food
-                  </a>
-                  <header class="news-details" style="margin-top:-70px;background: rgba(0,0,0,.5)" !important>
-                    <h3 class="news-title">
-                      <a href="#"  style="color:#49b79e" !important>
-                        How to Make Perfect Homemade Pizza
-                      </a>
-                    </h3>
-                    <p class="simple-share">
-                      by <a href="#"><b>John Doe</b></a> -
-                      <span class="article-date"><i class="fa fa-clock-o"></i> 12 hours ago</span>
-                    </p>
-                  </header>
-                </article><!-- News block -->
-              </div>
-
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <article class="news-block small-block">
-                  <a href="#" class="overlay-link">
-                    <figure class="image-overlay">
-                      <img src="img/big-thumb/big_thumb46.jpg" alt="">
-                    </figure>
-                  </a>
-                  <a href="#" class="category">
-                    Advice
-                  </a>
-                  <header class="news-details" style="margin-top:-70px;background: rgba(0,0,0,.5)" !important>
-                    <h3 class="news-title">
-                      <a href="#"  style="color:#49b79e" !important>
-                        Never Ask a Busy Person to Lunch
-                      </a>
-                    </h3>
-                    <p class="simple-share">
-                      by <a href="#"><b>John Doe</b></a> -
-                      <span class="article-date"><i class="fa fa-clock-o"></i> 4 hours ago</span>
-                    </p>
-                  </header>
-                </article><!-- News block -->
-              </div>
-
-              <div class="col-md-6">
-                <article class="news-block small-block">
-                  <a href="#" class="overlay-link">
-                    <figure class="image-overlay">
-                      <span class="play-button"><i class="fa fa-play"></i></span>
-                      <img src="img/big-thumb/big_thumb47.jpg" alt="">
-                    </figure>
-                  </a>
-                  <a href="#" class="category">
-                    Food
-                  </a>
-                  <header class="news-details" style="margin-top:-70px;background: rgba(0,0,0,.5)" !important>
-                    <h3 class="news-title">
-                      <a href="#"  style="color:#49b79e" !important>
-                        How to Make Perfect Homemade Pizza
-                      </a>
-                    </h3>
-                    <p class="simple-share">
-                      by <a href="#"><b>John Doe</b></a> -
-                      <span class="article-date"><i class="fa fa-clock-o"></i> 12 hours ago</span>
-                    </p>
-                  </header>
-                </article><!-- News block -->
-              </div>
-
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <article class="news-block small-block">
-                  <a href="#" class="overlay-link">
-                    <figure class="image-overlay">
-                      <img src="img/big-thumb/big_thumb46.jpg" alt="">
-                    </figure>
-                  </a>
-                  <a href="#" class="category">
-                    Advice
-                  </a>
-                  <header class="news-details" style="margin-top:-70px;background: rgba(0,0,0,.5)" !important>
-                    <h3 class="news-title">
-                      <a href="#"  style="color:#49b79e" !important>
-                        Never Ask a Busy Person to Lunch
-                      </a>
-                    </h3>
-                    <p class="simple-share">
-                      by <a href="#"><b>John Doe</b></a> -
-                      <span class="article-date"><i class="fa fa-clock-o"></i> 4 hours ago</span>
-                    </p>
-                  </header>
-                </article><!-- News block -->
-              </div>
-
-              <div class="col-md-6">
-                <article class="news-block small-block">
-                  <a href="#" class="overlay-link">
-                    <figure class="image-overlay">
-                      <span class="play-button"><i class="fa fa-play"></i></span>
-                      <img src="img/big-thumb/big_thumb47.jpg" alt="">
-                    </figure>
-                  </a>
-                  <a href="#" class="category">
-                    Food
-                  </a>
-                  <header class="news-details" style="margin-top:-70px;background: rgba(0,0,0,.5)" !important>
-                    <h3 class="news-title">
-                      <a href="#"  style="color:#49b79e" !important>
-                        How to Make Perfect Homemade Pizza
-                      </a>
-                    </h3>
-                    <p class="simple-share">
-                      by <a href="#"><b>John Doe</b></a> -
-                      <span class="article-date"><i class="fa fa-clock-o"></i> 12 hours ago</span>
-                    </p>
-                  </header>
-                </article><!-- News block -->
-              </div>
-
-            </div>
-
-          </section>
+                        }
+                    ?>
           <!-- END BLOCK 2 -->
-
-        </div><!-- End Left big column -->
-
-
-
-
-
+     </div><!-- End Left big column -->
 <!-- Jquery js -->
 
 <script src="js/jquery-1.11.2.min.js"></script>
-
-
 
 <!-- Modernizr -->
 
 <script src="js/modernizr.min.js"></script>
 
-
-
 <!-- Bootstrap js -->
 
 <script src="plugins/bootstrap/js/bootstrap.js"></script>
-
-
 
 <!-- Google map api -->
 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
-
-
 <!-- Theme js -->
 
 <script src="js/script.min.js"></script>
-
-
-
-
-
-        <footer class="android-footer mdl-mega-footer" style="float:bottom" !important>
+        <footer class="android-footer mdl-mega-footer">
           <div class="mdl-mega-footer--top-section">
             <div class="text-center center-block">
                 <div class="component">
@@ -946,7 +677,6 @@ span.psw {
             <a class="android-link mdl-typography--font-light" href="" color="white" >contact Us</a>
             <a class="android-link mdl-typography--font-light" href="" color="white" >Privacy Policy</a>
           </div>
-
         </footer>
       </div>
     </div>
@@ -956,9 +686,9 @@ span.psw {
 
 </html>
 <?php
-  error_reporting(0);
+error_reporting(0);
   session_start();
-  include("./db/dbconfig.php");
+  include("dbconfig.php");
   if($_SESSION['sid']==session_id())
 		{
 			    echo "<script>

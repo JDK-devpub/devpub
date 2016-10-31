@@ -1,18 +1,18 @@
 <?php
+include ("dbconfig.php");
+session_start();
+if(isset($_SESSION['globalID'])) {
+$id = $_SESSION['globalID'];
+//retrieve JOB_ID from jobs.php
+$job_id = $_GET['id_job'];
+echo "JOB ID : " .$job_id;
 
-  include ("dbconfig.php");
-  session_start();
-     $id = $_GET['news_id'];
-     $news_content = mysqli_query($dbconfig,"select * from news where news_id='$id'");
-     while ($row_result = mysqli_fetch_array($news_content)){
-          $news_title = $row_result['news_title'];
-          $news_image = $row_result['news_image'];
-          $news_short_description = $row_result['news_short_description'];
-          $news_full_content = $row_result['news_full_content'];
-          $news_author = $row_result['news_author'];
-          $news_published_on = $row_result['news_published_on'];
-     }
+
+}else{
+  header('location:error.php');
+}
 ?>
+
 <!DOCTYPE <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,14 +26,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.min.css">
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="News css/bootstrap.min.css">
-    <link rel="stylesheet" href="News css/font-awesome.css">
-    <link rel="stylesheet" href="News css/style.min.css">
-    <link rel="stylesheet" href="News css/style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="7b21a426-39d2-4d48-b1b8-d1167e8de4eb.css" />
     <!-- css -->
-      <link rel="stylesheet" href="../css/demo.css">
+      <link rel="stylesheet" href="css/demo.css">
         <link rel="stylesheet" href="News Css/newspage.css">
 
   <!-- modernizr -->
@@ -177,7 +174,7 @@ span.psw {
 }
 
     </style>
-    <script src="../js/modernizr.js">
+    <script src="js/modernizr.js">
     </script>
   </head>
   <body style="background-color:#D3D3D3" !important>
@@ -186,7 +183,7 @@ span.psw {
       <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
           <span class="android-title mdl-layout-title">
-            <img class="android-logo-image" src="../images/android-logo.png" href="index.php">
+            <img class="android-logo-image" src="images/android-logo.png" href="index.php">
           </span>
           <!-- Add spacer, to align navigation to the right in desktop -->
           <div class="android-header-spacer mdl-layout-spacer"></div>
@@ -201,19 +198,19 @@ span.psw {
           <!-- Navigation -->
           <div class="android-navigation-container" id="navigation_class">
             <nav class="android-navigation mdl-navigation">
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#id02" id="signup_id" onclick="document.getElementById('id02').style.display='block'" style="width:auto;text-decoration: none">SignUp</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#id01" id="login_id"  onclick="document.getElementById('id01').style.display='block'" style="width:auto;text-decoration: none">Login</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="dashboard.php" id="dash_id" style="display:none;text-decoration: none" >Dashboard</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="" style="text-decoration: none">Forum</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="news.php" style="text-decoration: none">News</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="" style="text-decoration: none">Market</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="" id"jobs_id" style="display:block;text-decoration: none">Jobs</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="logout.php" id="exit_id" style="display:none;text-decoration: none">Logout</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#id02" id="signup_id" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">SignUp</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#id01" id="login_id"  onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="./db/dashboard.php" id="dash_id" style="display:none" >Dashboard</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Forum</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="news.php">News</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Market</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="" id"jobs_id" style="display:block">Jobs</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="./db/logout.php" id="exit_id" style="display:none">Logout</a>
             </nav>
           </div>
           <!-- Login pop up -->
           <div id="id01" class="modal">
-                <form class="modal-content animate" method="post" action="login.php">
+                <form class="modal-content animate" method="post" action="./db/login.php">
                   <div class="container">
                     <div class="newsforms" style="float:center">
                       <div style="width:70%">
@@ -269,7 +266,7 @@ span.psw {
             </script>
                   <!-- Sign Up PoP Up-->
                    <div id="id02" class="modal">
-                    <form class="modal-content animate" method="post" action="signup.php">
+                    <form class="modal-content animate" method="post" action="./db/signup.php">
                       <div class="container">
                         <div class="newsforms" style="float:center;margin-left:100px" !important>
                           <div style="width:70%">
@@ -565,7 +562,7 @@ span.psw {
                       </div>
                       <div class="container" style="background-color: #37474f;width:70%">
                         <button type="button"  onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-                      </div>
+                    </div>
                     </form>
                </div>
                   <script>
@@ -587,186 +584,203 @@ span.psw {
         <a name="top"></a>
 
 
-          <body class="sticky_footer">
-	           <div class="wrapper">
+        <body>
 
 
-		<!-- CONTENT BEGIN -->
-		<div id="content" class="sidebar_right">
-			<div class="inner">
-				<div class="block_general_title_2">
-					<h1><?php echo $news_title ?></h1>
-					<h2><a href="#" class="tags">Tech</a>&nbsp;&nbsp;/&nbsp;&nbsp;<span class="author">by <a href="#"><?php echo $news_author ?></a></span>&nbsp;&nbsp;/&nbsp;&nbsp;<span class="date"><?php echo $news_published_on ?></span></h2>
-				</div>
-
-				<div class="main_content">
-					<div class="block_content">
-						<div class="pic"><img src="data:image/jpeg;base64,<?php echo base64_encode($news_image) ?>" alt=""></div>
-						<p> <?php echo $news_short_description ?></p>
-						<p><?php echo $news_full_content ?></p>
-
-						<h3>Small Heading Style</h3>
-
-						<p>Qed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae et quasi architecto beatae vitae dicta sunt explicabo emo enim ipsam voluptatem.</p>
-
-						<p>Red ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-
-						<div class="block_featured_2 left">
-							<div class="content">
-								<p>Perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae et quasi architecto beatae vitae dicta sunt explicabo emo. Enim ipsam voluptatem.</p>
-							</div>
-						</div>
-
-						<p>Perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae et quasi architecto beatae vitae dicta sunt explicabo emo.</p>
-						<p>Enim ipsam voluptatem. Quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur. Neque porro quisquam est, qui dolorem.</p>
-						<p>Qed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae et quasi architecto beatae vitae dicta sunt explicabo emo enim ipsam voluptatem.</p>
-
-						<div class="line_1"></div>
-					</div>
-
-				</div>
-
-				<div class="sidebar">
+<style type="text/css">
+ .masthead { background-image: url('/_resx/imageresource/6c98c906792f1577bfc0d18c556bf5096fdfeb00-4-32-0-0-0'); height: 150px; }
+ @media only screen and (max-width: 640px) {
+     .masthead { background-image: url('/_resx/imageresource/6f21f2162c3d4d51455ff500ec6d84bfcfdb5cc8-4-32-5000-140-0'); height: 140px; }
+ }
+</style>
 
 
-					<aside>
-						<div class="block_banner_1"><a href="#"><img src="https://www.stayathomemum.com.au/cache/860x380-0/wp-content/uploads/2010/05/bigstock-frightened-woman-looking-at-ca-45637420.jpg" alt=""></a></div>
-					</aside>
-
-					<aside>
-						<div class="sidebar_title_1">Latest reviews</div>
-
-						<div class="block_sidebar_latest_reviews">
-							<div class="review">
-								<div class="title">New Iphone 5s review</div>
-								<div class="num">89%</div>
-								<div class="progress"><div class="bar" style="width:89%;"></div></div>
-							</div>
-
-							<div class="review">
-								<div class="title">beatae vitae dicta.</div>
-								<div class="num">50%</div>
-								<div class="progress"><div class="bar" style="width:50%;"></div></div>
-							</div>
-
-							<div class="review">
-								<div class="title">enim ipsam voluptatem quia...</div>
-								<div class="num">69%</div>
-								<div class="progress"><div class="bar" style="width:69%;"></div></div>
-							</div>
-						</div>
-					</aside>
-
-					<aside>
-						<div class="sidebar_title_1">Popular posts</div>
-
-						<div class="block_sidebar_popular_posts">
-							<article>
-								<div class="image"><a href="#"><img src="https://s-media-cache-ak0.pinimg.com/736x/a8/2a/d1/a82ad1c76a7345eb3f4fe9f8c604b253.jpg" alt=""></a></div>
-
-								<div class="content">
-									<div class="title">
-										<a href="blog_post.html">Quae ab illo inventore veritatis et quasi.</a>
-									</div>
-
-									<div class="info">
-										<div class="tags"><a href="#">TRAVEL</a>, <a href="#">LIFE</a></div>
-										<div class="date">27, 2013</div>
-									</div>
-								</div>
-							</article>
-
-							<article>
-								<div class="image"><a href="#"><img src="https://s-media-cache-ak0.pinimg.com/736x/a8/2a/d1/a82ad1c76a7345eb3f4fe9f8c604b253.jpg" alt=""></a></div>
-
-								<div class="content">
-									<div class="title">
-										<a href="blog_post.html">Nemo enim ipsam voluptatem quia voluptas.</a>
-									</div>
-
-									<div class="info">
-										<div class="tags"><a href="#">TRAVEL</a>, <a href="#">LIFE</a></div>
-										<div class="date">27, 2013</div>
-									</div>
-								</div>
-							</article>
-
-							<article>
-								<div class="image"><a href="#"><img src="https://s-media-cache-ak0.pinimg.com/736x/a8/2a/d1/a82ad1c76a7345eb3f4fe9f8c604b253.jpg" alt=""></a></div>
-
-								<div class="content">
-									<div class="title">
-										<a href="blog_post.html">Sit aspernatur aut odit aut fugit, sed quia.</a>
-									</div>
-
-									<div class="info">
-										<div class="tags"><a href="#">TRAVEL</a>, <a href="#">LIFE</a></div>
-										<div class="date">27, 2013</div>
-									</div>
-								</div>
-							</article>
-						</div>
-					</aside>
-
-					<aside>
-						<div class="sidebar_title_1">Most commented</div>
-
-						<div class="block_sidebar_most_commented">
-							<article>
-								<a href="#">
-									<span class="num">12<span class="tail"></span></span>
-									<span class="title">Quae ab illo inventore veritatis et quasi.</span>
-								</a>
-							</article>
-
-							<article>
-								<a href="#">
-									<span class="num">8<span class="tail"></span></span>
-									<span class="title">Fugit, sed quia consequuntur.</span>
-								</a>
-							</article>
-
-							<article>
-								<a href="#">
-									<span class="num">7<span class="tail"></span></span>
-									<span class="title">Sed quia consequuntur magni dolores eos qui.</span>
-								</a>
-							</article>
-						</div>
-					</aside>
-
-					<aside>
-						<div class="sidebar_title_1">Latest Comments</div>
-
-						<div class="block_sidebar_latest_comments">
-							<article>
-								<div class="num">1</div>
-								<div class="content">
-									<div class="author"><span>Mark Summers</span> says:</div>
-									<div class="comment">Aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</div>
-								</div>
-							</article>
-
-							<article>
-								<div class="num">2</div>
-								<div class="content">
-									<div class="author"><span>Sara hornet</span> says:</div>
-									<div class="comment">Magni dolores eos qui ratione voluptatem sequi nesciunt.</div>
-								</div>
-							</article>
-						</div>
-					</aside>
-
-				</div>
-
-				<div class="clearboth"></div>
-			</div>
-		</div>
-		<!-- CONTENT END -->
+      <ul class="skip-links">
+    <li class="clearfix"><a href="#main-navigation" id="skip-to-navigation">Skip to main navigation</a></li>
+    <li class="clearfix"><a href="#content-start">Skip to main content</a></li>
+  </ul>
 
 
-        </div>
-      </body>
+<style type="text/css">
+.masthead { background-image: url('/_resx/imageresource/6c98c906792f1577bfc0d18c556bf5096fdfeb00-4-32-0-0-0'); height: 150px; }
+@media only screen and (max-width: 640px) {
+ .masthead { background-image: url('/_resx/imageresource/6f21f2162c3d4d51455ff500ec6d84bfcfdb5cc8-4-32-5000-140-0'); height: 140px; }
+}
+</style>
+
+
+
+<
+
+      <div class="main" id="main">
+
+          <div class="internal-cols-aside-right clearfix">
+              <div>
+
+                  <div class="main-content" id="content-start">
+
+
+
+<div class="content vacancy-detail" itemscope itemtype="http://schema.org/JobPosting">
+
+  <h1 itemprop="title">.Net developer with MVC, WCF, Hibernate speaking French or Dutch</h1>
+
+  <meta itemprop="url" content="http://www.itjobdepot.com/jobs/net-developer-with-mvc-wcf-hibernate-speaking-french-or-dutch-brussel/20294281-2/" />
+
+
+
+<!-- please leave table -->
+<ul>
+  <table style="width: 345px;">
+  <tbody>
+  <tr>
+  <td style="width: 152px;">Job Reference:;</td>
+  <td style="width: 192px;">&nbsp;</td>
+  </tr>
+  <tr>
+  <td style="width: 152px;">Date Posted:;</td>
+  <td style="width: 192px;">&nbsp;</td>
+  </tr>
+  <tr>
+  <td style="width: 152px;">Recruiter;</td>
+  <td style="width: 192px;">&nbsp;</td>
+  </tr>
+  <tr>
+  <td style="width: 152px;">Location;</td>
+  <td style="width: 192px;">&nbsp;</td>
+  </tr>
+  <tr>
+  <td style="width: 152px;">Salary</td>
+  <td style="width: 192px;">&nbsp;</td>
+  </tr>
+  <tr>
+  <td style="width: 152px;">Bouus/Benfits</td>
+  <td style="width: 192px;">&nbsp;</td>
+  </tr>
+  <tr>
+  <td style="width: 152px;">Sector</td>
+  <td style="width: 192px;">&nbsp;</td>
+  </tr>
+  <tr>
+  <td style="width: 152px;">Job Type</td>
+  <td style="width: 192px;">&nbsp;</td>
+  </tr>
+  <tr>
+  <td style="width: 152px;">Start date:;</td>
+  <td style="width: 192px;">&nbsp;</td>
+  </tr>
+  <tr>
+  <td style="width: 152px;">Work Hours:</td>
+  <td style="width: 192px;">&nbsp;</td>
+  </tr>
+  </tbody>
+  </table>
+
+
+</ul>
+
+  <div class="vacancy-apply-floating">
+
+      <a id="uxMainContent_uxApplyFloating" rel="nofollow" href="/jobs/apply/?id=20294281-2">Apply for this job now<i class="fa fa-chevron-right"></i></a>
+
+</div>
+
+  <div class="description clearfix">
+
+      <h2>Job Description</h2>
+
+
+
+      <div itemprop="description">
+          Job title: .NET developer with MVC, WCF, Hibernate speaking French or Dutch<BR><BR>Location: Brussels, Belgium<BR><BR>Key skills: .Net, developer, MVC, WCF, Hibernate, outsystems, JavaScript, unit testing, French, Dutch<BR><BR>Our client is urgently searching for a strong Net developer with MVC, WCF, Hibernate speaking French or Dutch to work on a critical project in Brussels as a contractor.<BR><BR>A successful candidate will have strong skills in:<BR><BR>.Net development<BR>MVC,<BR>WCF,<BR>Hibernate<BR>JavaScript<BR>Jquery<BR>Angular JS<BR>IOC (spring .net, unity)<BR>Unit testing,<BR>Complexity<BR>Duplication<BR>TDD<BR>Spec flow<BR>Continuous integration<BR>Utility sector experience<BR>Outsystems platform development<BR>Outsystems associate certificate<BR><BR>This is a French or Dutch speaking role.<BR><BR>Please send your CV in Word format ASAP for immediate and confidential interviews<BR><BR><img src="http://www.jobg8.com/Tracking.aspx?Ylnk%2farLowhjP4qWLsxsewk" width="0" height="0" />
+      </div>
+
+  </div>
+
+</div>
+
+
+
+                  </div>
+
+
+                  <div class="aside vacancy-aside">
+
+
+
+<div>
+
+  <a id="uxAsideContent_uxApply" class="vacancy-apply" rel="nofollow" href="/jobs/apply/?id=20294281-2">Apply for this job now<i class="fa fa-chevron-right"></i></a>
+
+  <div id="uxAsideContent_uxShareThisVacancy" class="share-this-vacancy">
+
+      <span>Share this job</span>
+      <ul>
+          <li class="email"><a id="uxAsideContent_uxShareThisJobEmailLink" rel="nofollow" href="mailto:?subject=.Net developer with MVC, WCF, Hibernate speaking French or Dutch, Brussel&amp;body=http%3a%2f%2fwww.itjobdepot.com%2fjobs%2fnet-developer-with-mvc-wcf-hibernate-speaking-french-or-dutch-brussel%2f20294281-2%2f"><i class="fa fa-envelope-o"></i>Email</a></li>
+          <li class="facebook"><a id="uxAsideContent_uxShareThisJobFacebookLink" data-popup-width="600" data-popup-height="300" rel="nofollow" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fwww.itjobdepot.com%2fjobs%2fnet-developer-with-mvc-wcf-hibernate-speaking-french-or-dutch-brussel%2f20294281-2%2f" target="_blank"><i class="fa fa-facebook-square"></i>Facebook</a></li>
+          <li class="twitter"><a id="uxAsideContent_uxShareThisJobTwitterLink" data-popup-width="600" data-popup-height="420" rel="nofollow" href="https://twitter.com/home?status=http%3a%2f%2fwww.itjobdepot.com%2fjobs%2fnet-developer-with-mvc-wcf-hibernate-speaking-french-or-dutch-brussel%2f20294281-2%2f" target="_blank"><i class="fa fa-twitter-square"></i>Twitter</a></li>
+          <li class="linkedin"><a id="uxAsideContent_uxShareThisJobLinkedInLink" data-popup-width="800" data-popup-height="500" rel="nofollow" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fwww.itjobdepot.com%2fjobs%2fnet-developer-with-mvc-wcf-hibernate-speaking-french-or-dutch-brussel%2f20294281-2%2f&amp;title=.Net+developer+with+MVC%2c+WCF%2c+Hibernate+speaking+French+or+Dutch%2c+Brussel&amp;summary=Job+title%3a+.NET+developer+with+MVC%2c+WCF%2c+Hibernate+speaking+French+or+DutchLocation%3a+Brussels%2c+BelgiumKey+skills%3a+.Net%2c+developer%2c+MVC%2c+WCF%2c+Hibernate%2c+outsystems%2c+JavaScript%2c+unit+testing%2c+French%2c+DutchOur+client+is+urgently+searching+for+a+strong+Net...&amp;source=www.itjobdepot.com" target="_blank"><i class="fa fa-linkedin-square"></i>LinkedIn</a></li>
+          <li class="google-plus"><a id="uxAsideContent_uxShareThisJobGooglePlusLink" data-popup-width="600" data-popup-height="560" rel="nofollow" href="https://plus.google.com/share?url=http%3a%2f%2fwww.itjobdepot.com%2fjobs%2fnet-developer-with-mvc-wcf-hibernate-speaking-french-or-dutch-brussel%2f20294281-2%2f" target="_blank"><i class="fa fa-google-plus-square"></i>Google+</a></li>
+      </ul>
+
+</div>
+
+  <ul class="vacancy-actions">
+      <li class="shortlist">
+          <a class="remove hide" rel="nofollow" href="/jobs/shortlist/?remove=20294281&amp;type=2" onclick="ajaxVacancyShortlist(this.href,20294281,-1);return false;" name="shortlistlink_remove_20294281"><i class="fa fa-times-circle-o"></i>Remove from your shortlist</a><a class="add" rel="nofollow" href="/jobs/shortlist/?add=20294281&amp;type=2" onclick="ajaxVacancyShortlist(this.href,20294281,1);return false;" name="shortlistlink_add_20294281"><i class="fa fa-check-circle-o"></i>Add to your shortlist</a>
+      </li>
+      <li class="more-vacancies"><a id="uxAsideContent_uxSimilarJobsLink" rel="nofollow" href="/jobs/jobs-like-.net-developer-with-mvc-wcf-hibernate-speaking-french-or-dutch-brussel/sv-20294281_2/"><i class="fa fa-plus-circle"></i>More jobs like this</a></li>
+      <li id="uxAsideContent_uxAlertLinkArea" class="email"><a id="uxAsideContent_uxAlertLink" href="/jobs/alert/?params=CompanyName%3dAardvark%2bConsulting"><i class="fa fa-envelope-o"></i>Email me jobs like this</a></li>
+      <li id="uxAsideContent_uxRSSLinkArea" class="rss"><a id="uxAsideContent_uxRSSLink" href="/jobs/rss/?params=CompanyName%3dAardvark%2bConsulting"><i class="fa fa-rss-square"></i>Jobs like this by RSS</a></li>
+      <li class="print"><a><i class="fa fa-print"></i>Print this page</a></a></li>
+      <li class="back"><a id="uxAsideContent_uxBackLink" href="/jobs/aardvark-consulting-jobs/em-Aardvark-Consulting/#v20294281-2"><i class="fa fa-chevron-circle-left"></i>Back to Search Results</a></li>
+  </ul>
+
+</div>
+
+
+
+
+
+                  </div>
+
+              </div>
+          </div>
+
+      </div>
+
+
+
+      <div class="site-navigation-visible-mask"><!-- --></div>
+
+      <script type="text/javascript" src="/_resx/templates/00015/js/jquery-1.11.0.min.js"></script>
+      <script type="text/javascript" src="/_resx/templates/00015/js/plugins.min.js"></script>
+      <script type="text/javascript" src="/_resx/templates/00015/js/base.js"></script>
+      <script type="text/javascript" src="/_resx/templates/00015/js/build.js"></script>
+
+      <script type="text/javascript">
+      //<![CDATA[
+          BuildJS("VacancyDetail");
+      //]]>
+      </script>
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+$.get("/vacancyviewincrementer.ashx", {vacancyid:'20294281', jobsource:'2', recruiterid:'0'});VacancyShortlistSummary.register("ctl09_ctl09", "You have no jobs in your shortlist", "You have \u005B\u005Bcount\u005D\u005D job in your shortlist", "You have \u005B\u005Bcount\u005D\u005D jobs in your shortlist", "ctl09_ctl03");
+$('#ctl09_ctl03').hide();
+VacancyShortlistSummary.register("ctl09_ctl10", "Shortlist (\u005B\u005Bcount\u005D\u005D)", "Shortlist (\u005B\u005Bcount\u005D\u005D)", "Shortlist (\u005B\u005Bcount\u005D\u005D)", "");
+//]]>
+</script>
+</form>
+
+
+
+
+
+
+  </body>
 
 
 

@@ -178,7 +178,10 @@ while ($row_skill = mysqli_fetch_array($skill_info)){
                                <h4 class="card-title grey-text text-darken-4">Workplace</h4>
                                <p class="medium-small grey-text"><?php echo urldecode($company); ?></p>
                            </div>
-
+                            <div class="col s2 center-align">
+                               <h4 class="card-title grey-text text-darken-4">Resume</h4>
+                               <a class="btn-floating blue" href="pdfconvert.php"><i class="material-icons">print</i></a>
+                           </div>
 
                          </div>
                        </div>
@@ -197,7 +200,7 @@ while ($row_skill = mysqli_fetch_array($skill_info)){
                        </div> -->
                    </div >
 
-                     <div class="card light-blue" style="float:right;width:605px;height:500px">
+                     <div class="card light-blue" style="float:right;width:605px;height:400px">
                        <div class="card-content white-text">
                          <span class="card-title">About Me!</span>
                          <p><?php echo $aboutme ?></p>
@@ -316,18 +319,18 @@ while ($row_skill = mysqli_fetch_array($skill_info)){
                          </li>
                        </ul>
                      </div>
-                         </div>
-                         <div class="card light-white" style="width:710px;height:250px">
+                     <div class="card light-white" style="margin-right:10px;float:right;width:605px;height:250px">
                            <div class="card-content black-text">
                              <span class="card-title" style="color:black" !important>Employment History</span>
                              <p><?php echo $job_history ?></p>
                            </div>
-                         </div>
-                         <div class="card light-white" style="width:710px;height:250px">
+                         </div><br>
+                         <div class="card light-white" style="margin-right:10px;float:right;width:605px;height:250px">
                            <div class="card-content black-text">
                              <span class="card-title" style="color:black" !important>Project History</span>
                              <p><?php echo $job_history ?></p>
                            </div>
+                         </div>
                          </div>
                        </div>
                    </div>
