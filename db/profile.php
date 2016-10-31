@@ -312,11 +312,6 @@ while ($row_skill = mysqli_fetch_array($skill_info)){
                              </label>
                              <span class="task-cat pink">Mockup</span>
                          </li>
-                         <li class="collection-item dismissable">
-                             <input type="checkbox" id="task4" checked="checked" disabled="disabled" />
-                             <label for="task4">I did it !</label>
-                             <span class="task-cat cyan">Mobile App</span>
-                         </li>
                        </ul>
                      </div>
                      <div class="card light-white" style="margin-right:10px;float:right;width:605px;height:250px">
