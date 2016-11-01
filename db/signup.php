@@ -1,7 +1,6 @@
 <?php
     session_start();
     include ("dbconfig.php");
-    $msg = "";
     if(isset($_POST["submit"]))
     {
         $fname = $_POST["fname"];
@@ -48,9 +47,9 @@
                 }else{
                   echo "couldnot get id";
                 }
-                echo "Successful";
+                header('location:success.php');
               }else{
-                echo "false";
+                header('location:error.php');
               }
           }
         }

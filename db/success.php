@@ -57,9 +57,9 @@
 		   	<div class="row">
 		   		<div class="col-twelve">
 			  		
-			  			<h1 class="kern-this">Error</h1>
+			  			<h1 class="kern-this">Congratulations</h1>
 			  			<p>
-						Oooooops! Looks like you do not have permission
+						Step in! 
 			  			</p>   			
 			   	</div> <!-- /twelve --> 		   			
 		   	</div> <!-- /row -->    		 		

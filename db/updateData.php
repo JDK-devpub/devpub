@@ -58,7 +58,7 @@
             else if (!$query_two){
               echo "Query Two Problem";
             }else{
-              echo "Successful";
+              header('location:success.php');
               }
         }else{
           echo "Form Issue";

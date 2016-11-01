@@ -132,7 +132,7 @@ $(function() {
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Edit Profile</span>
+          <span class="mdl-layout-title">Create Crew</span>
           <div class="mdl-layout-spacer"></div>
           <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
             <i class="material-icons" >search</i>
@@ -167,99 +167,48 @@ $(function() {
         </nav>
       </div>
 
-
       <main class="mdl-layout__content mdl-color--grey-100" stye="display:block">
         <section class="edit_forms1">
             <div class="col s12 m12 l6">
            <div class="card-panel">
              <div class="row">
-               <form class="col s12" method="post" action="updateData.php" enctype="multipart/form-data">
+               <form class="col s12" method="post" action="creategroup.php" enctype="multipart/form-data">
                  <div class="row">
                    <div class="input-field col s12">
-                        <label for="first_name">Firstname</label>
+                        <label for="first_name">Group Name</label>
                         <br>
-                     <input placeholder="FirstName" name="ufname" type="text" value="<?php echo "$fname"; ?>" required>
+                     <input placeholder="Enter a meaningful name" name="gname" type="text" value="" required>
                    </div>
                    <div class="input-field col s12">
-                        <label for="last_name">Lastname</label>
+                        <label for="last_name">Project Name</label>
                         <br>
-                     <input placeholder="John Doe" name="ulname" type="text" value="<?php echo "$lname"; ?>" required>
+                     <input placeholder="Enter a meaningful name" name="pname" type="text" value="" required>
                    </div>
                    <div class="input-field col s12">
-                        <label for="first_name">DevPub Name</label>
+                        <label for="first_name">Project Description</label>
                         <br>
-                     <input placeholder="Reason: Coolness" name="nickname" type="text" value="<?php echo urldecode($nick); ?>" required>
+                     <input placeholder="Say something about your project" name="nickname" type="text" value="" required>
                    </div>
                    <div class="input-field col s12">
-                        <label for="skills">Skills</label>
+                        <label for="skills">Group Members (Minimum 3 Members | Maximum 5 Members)</label>
                         <br>
                       
-                     <input placeholder="Type skill 1,skill 2,..." name="skills" id="skills" type="text" value="<?php
-                     if(!empty($skill))
-                     {
-                       echo $skill;
-                     }
-                     else{
-                       echo "No information";
-                     } ?>" required>
-                   </div>
-                   <div class="input-field col s12">
-                        <label for="first_name">Birthdate</label>
-                        <br>
-                     <input  name="dob" type="date" value="<?php echo "$dob"; ?>" required>
+                     <input style="width:130px" placeholder="Example: Mr. J" name="memberone" id="memberone" type="text" value=""required> <input style="width:130px" placeholder="Example: Harley Quin" name="membertwo" id="membertwo" type="text" value=""required>
+                     <input style="width:130px" placeholder="Example: El Diablo" name="memberthree" id="memberthree" type="text" value=""required> <input style="width:130px" placeholder="Example: El Diablo" name="memberfour" id="skills" type="text" value="">
+                     <input style="width:150px" placeholder="Example: Deadpool" name="memberfive" id="memberfive" type="text" value="">
                    </div>
                    <div>
                      <input type="file" style="display:none" name="image" id="file-5" class="inputfile inputfile-4" data-multiple-caption="{count} files selected" multiple />
-					           <label for="file-5"  ><figure  style="background-color:#73879C"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg></figure> <span style="color:#73879C">Upload Profile Picture</span></label>
-                   </div>
-                 </div>
-             </div>
-           </div>
-         </div>
-       </section>
-       <section class="edit_forms2">
-           <div class="col s12 m12 l6">
-          <div class="card-panel">
-            <h4 class="header2">Professional and Educational Qualification</h4>
-            <div class="row">
-
-                <div class="row">
-                  <div class="input-field col s12">
-                       <label for="first_name">Project Tile</label>
-                       <br>
-                    <input placeholder="Project 1, Project 2" name="pname" type="text" value="<?php echo urldecode($ptitle); ?>">
-                  </div>
-                  <div class="input-field col s12">
-                       <label for="last_name">Company Name</label>
-                       <br>
-                    <input placeholder="Company Name" name="cname" type="text" value="<?php echo urldecode($company); ?>">
-                  </div>
-                  <div class="input-field col s12">
-                       <label for="first_name">College or University name</label>
-                       <br>
-                    <input placeholder="College Or University Name" name="college" type="text" value="<?php echo urldecode($college); ?>">
-                  </div>
-                  <div class="input-field col s12">
-                       <label for="qualifications">Last Educational Qualification</label>
-                       <br>
-                    <input placeholder="Type skill 1,skill 2" name="quali" type="text" value="<?php echo urldecode($last_qual); ?>">
-                  </div>
-                  <div class="input-field col s12">
-                       <label for="first_name">Employment Projects</label>
-                       <br>
-                    <input placeholder="Company Projects" name="eproject" type="text" value="<?php echo urldecode($employment_project); ?>">
-                  </div>
-                  <div class="input-field col s12">
-                    <br>
-                            <textarea placeholder="Enter About your self" name="text" class="materialize-textarea" ><?php echo $aboutme; ?></textarea>
-                            <label for="message">Bio</label>
-                  </div>
-                  <div class="row" style="margin-right:50px;margin-top:10px">
-                          <div class="input-field col s12">
-                            <button class="btn cyan waves-effect waves-light right" type="submit" name="submit">Submit
+					           <label for="file-5"  ><figure  style="background-color:#73879C"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg></figure> <span style="color:#73879C">Upload Group Picture/Logo</span></label>
+                            <div style="margin-top:-50px" class="input-field col s12">
+                                <button class="btn cyan waves-effect waves-light right" type="submit" name="submit">Submit
                             </button>
-                          </div>
                         </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </section>
                 </div>
               </form>
             </div>

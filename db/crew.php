@@ -128,23 +128,24 @@ while ($row_result = mysqli_fetch_array($profile_content)){
           <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
             <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
               <div style="height:250px" class="mdl-card__title mdl-card--expand mdl-color--teal-300">
-                <h2 class="mdl-card__title-text">Crew Name</h2>
+                <h2 class="mdl-card__title-text">Choose Crew</h2>
               </div>
               <div class="mdl-card__supporting-text mdl-color-text--grey-600">
                 Non dolore elit adipisicing ea reprehenderit consectetur culpa.
               </div>
               <div class="mdl-card__actions mdl-card--border">
-                <a href="crewpage.php" class="mdl-button mdl-js-button mdl-js-ripple-effect">Step In!</a>
+                <a href="crewreg.php" class="mdl-button mdl-js-button mdl-js-ripple-effect">Step In!</a>     <a href="crewpage.php" class="mdl-button mdl-js-button mdl-js-ripple-effect">Create New!</a>
               </div>
             </div>
             
             <div class="demo-separator mdl-cell--1-col"></div>
             <div style="margin-bottom:100px;padding:10dp"class="demo-options mdl-card mdl-color--deep-purple-500 mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop">
               <div class="mdl-card__actions mdl-card--border">
-                <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--blue-grey-50">On Going Project</a>
+                <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--blue-grey-50">On Going Projects</a>
                 <div class="mdl-layout-spacer"></div>
                 <i class="material-icons">turned_in_not</i>
               </div>
+              <h2 style="color:white;margin-left:20px">Hello</h2>
             </div>
           </div>
         </div>
