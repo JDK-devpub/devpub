@@ -750,3 +750,22 @@
                                                       </div>
                                             </div>
                                     </section>
+
+
+
+
+
+
+                                     <section class="news-text-block" style="margin:auto;height:300px;width:auto" !important>
+                                            <div class="demo-card-wide mdl-card mdl-shadow--2dp" style="width:auto;height:300px">
+                                                  <div class="card-image"  style="height:300px">
+                                                    <img src="https://material-design.storage.googleapis.com/publish/material_v_4/social.png">
+                                                  </div>
+                                            </div>
+                                                <div class="card light-white" style="float:right;width:605px;height:100px">
+                                                      <div class="card-content black-text">
+                                                        <span class="card-title" style="color:black;">News</span>
+                                                        <p>Some Text</p>
+                                                      </div>
+                                                </div>
+                                    </section>

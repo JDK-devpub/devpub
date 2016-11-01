@@ -194,6 +194,7 @@ $(function() {
                    <div class="input-field col s12">
                         <label for="skills">Skills</label>
                         <br>
+                      
                      <input placeholder="Type skill 1,skill 2,..." name="skills" id="skills" type="text" value="<?php
                      if(!empty($skill))
                      {

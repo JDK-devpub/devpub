@@ -21,12 +21,12 @@ $id = $_SESSION['globalID'];
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/style.css">
   <link type="text/css" rel="stylesheet" href="7b21a426-39d2-4d48-b1b8-d1167e8de4eb.css" />
     <!-- css -->
-      <link rel="stylesheet" href="css/demo.css">
-        <link rel="stylesheet" href="News Css/newspage.css">
+      <link rel="stylesheet" href="../css/demo.css">
+        <link rel="stylesheet" href="./News Css/newspage.css">
 
   <!-- modernizr -->
 
@@ -169,7 +169,7 @@ span.psw {
 }
 
     </style>
-    <script src="js/modernizr.js">
+    <script src="../js/modernizr.js">
     </script>
   </head>
   <body style="background-color:#D3D3D3" !important>
@@ -178,7 +178,7 @@ span.psw {
       <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
           <span class="android-title mdl-layout-title">
-            <img class="android-logo-image" src="images/android-logo.png" href="index.php">
+            <img class="android-logo-image" src="../images/android-logo.png" href="../index.php">
           </span>
           <!-- Add spacer, to align navigation to the right in desktop -->
           <div class="android-header-spacer mdl-layout-spacer"></div>
@@ -195,17 +195,17 @@ span.psw {
             <nav class="android-navigation mdl-navigation">
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#id02" id="signup_id" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">SignUp</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#id01" id="login_id"  onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="./db/dashboard.php" id="dash_id" style="display:none" >Dashboard</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="dashboard.php" id="dash_id" style="display:none" >Dashboard</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Forum</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="news.php">News</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Market</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="" id"jobs_id" style="display:block">Jobs</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="./db/logout.php" id="exit_id" style="display:none">Logout</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="logout.php" id="exit_id" style="display:none">Logout</a>
             </nav>
           </div>
           <!-- Login pop up -->
           <div id="id01" class="modal">
-                <form class="modal-content animate" method="post" action="./db/login.php">
+                <form class="modal-content animate" method="post" action="login.php">
                   <div class="container">
                     <div class="newsforms" style="float:center">
                       <div style="width:70%">
@@ -261,7 +261,7 @@ span.psw {
             </script>
                   <!-- Sign Up PoP Up-->
                    <div id="id02" class="modal">
-                    <form class="modal-content animate" method="post" action="./db/signup.php">
+                    <form class="modal-content animate" method="post" action="signup.php">
                       <div class="container">
                         <div class="newsforms" style="float:center;margin-left:100px" !important>
                           <div style="width:70%">
@@ -580,15 +580,12 @@ span.psw {
 
 
         <body>
-
-
 <style type="text/css">
  .masthead { background-image: url('/_resx/imageresource/6c98c906792f1577bfc0d18c556bf5096fdfeb00-4-32-0-0-0'); height: 150px; }
  @media only screen and (max-width: 640px) {
      .masthead { background-image: url('/_resx/imageresource/6f21f2162c3d4d51455ff500ec6d84bfcfdb5cc8-4-32-5000-140-0'); height: 140px; }
  }
 </style>
-
 
       <ul class="skip-links">
     <li class="clearfix"><a href="#main-navigation" id="skip-to-navigation">Skip to main navigation</a></li>
@@ -597,9 +594,6 @@ span.psw {
 
   <form method="post" action="./" onsubmit="javascript:return WebForm_OnSubmit();" id="uxForm" novalidate="">
 
-
-
-
 <div class="breadcrumbs">
   <div>
       <a href="/">Home</a> &gt;
@@ -607,7 +601,6 @@ Dev Pub jobs
 
   </div>
 </div>
-
           <div class="main" id="main">
 
               <div class="vacancy-listing-cols clearfix">
@@ -906,9 +899,6 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$uxAsideContent$ctl00', 'uxFor
   </ul>
 </div></div>
               </div>
-
-
-
               <div id="uxAsideContent_ctl01_rowJobType" class="field multiple-select-field items-3">
                   <label for="uxAsideContent_ctl01_uxJobTypeID">Job Type</label>
                   <div><ul id="uxAsideContent_ctl01_uxJobTypeID">
@@ -929,7 +919,6 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$uxAsideContent$ctl00', 'uxFor
                 <label for="uxAsideContent_ctl01_uxSalaryTo">To</label>
                           <div><input name="ctl00$uxAsideContent$ctl01$uxSalaryTo" type="number" value="To" id="uxAsideContent_ctl01_uxSalaryTo" title="To" placeholder="To" onfocus="if(this.value==&#39;To&#39;)value=&#39;&#39;;" onblur="if(this.value==&#39;&#39;)value=&#39;To&#39;;" /></div>
                       </div>
-
                   </div>
           </div>
           <div class="buttons">
@@ -944,26 +933,12 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$uxAsideContent$ctl00', 'uxFor
   </div>
 
 </div>
-
 <!-- 2014.2.724.45 --><div id="uxAsideContent_ctl01_ctl01SU">
 <span id="ctl00_uxAsideContent_ctl01_ctl01" style="display:none;"></span>
 </div>
-
-
-
-
-
                               </div>
-
                               <div class="main-content" id="content-start">
-
-
-
-
-
   <div id="uxMainContent_uxVacancyListingArea" class="vacancy-listing">
-
-
       <div class="clearfix">
 
           <div class="results-count-and-jobs-like-these-links clearfix">
@@ -1057,15 +1032,10 @@ while ($row_job = mysqli_fetch_assoc($job_info)){
 ?>
 
 </div>
-
-
                               </div>
-
                           </div>
                       </div>
-
                   </div>
-
                   <div id="ctl11_ctl00_uxSearch" class="form placeholder-labels quick-search medium-no-quick-search" onkeypress="javascript:return WebForm_FireDefaultButton(event, &#39;ctl11_ctl00_uxSearchButton&#39;)">
 
   <div id="job-search">
@@ -1365,17 +1335,8 @@ while ($row_job = mysqli_fetch_assoc($job_info)){
           BuildJS("VacancySearchResults");
           //]]>
       </script>
-
-
-
 </form>
-
   </body>
-
-
-
-
-
         <footer class="android-footer mdl-mega-footer" style="float:bottom" !important>
           <div class="mdl-mega-footer--top-section">
             <div class="text-center center-block">

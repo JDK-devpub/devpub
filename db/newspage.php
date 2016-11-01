@@ -203,6 +203,7 @@ span.psw {
             <nav class="android-navigation mdl-navigation">
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#id02" id="signup_id" onclick="document.getElementById('id02').style.display='block'" style="width:auto;text-decoration: none">SignUp</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#id01" id="login_id"  onclick="document.getElementById('id01').style.display='block'" style="width:auto;text-decoration: none">Login</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="../index.php" style="text-decoration: none">Home</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="dashboard.php" id="dash_id" style="display:none;text-decoration: none" >Dashboard</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="" style="text-decoration: none">Forum</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="news.php" style="text-decoration: none">News</a>

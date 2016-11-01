@@ -187,7 +187,7 @@ span.psw {
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Forum</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="./db/news.php">News</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Market</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="" id"jobs_id" style="display:block">Jobs</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="./db/jobs.php" id"jobs_id" style="display:block">Jobs</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="./db/logout.php" id="exit_id" style="display:none">Logout</a>
             </nav>
           </div>
@@ -778,7 +778,6 @@ span.psw {
             <a class="android-link mdl-typography--font-light" href="" color="white" >contact Us</a>
             <a class="android-link mdl-typography--font-light" href="" color="white" >Privacy Policy</a>
           </div>
-
         </footer>
       </div>
     </div>
