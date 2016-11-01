@@ -5,27 +5,9 @@ if(isset($_SESSION['globalID'])) {
 $id = $_SESSION['globalID'];
 $profile_content = mysqli_query($dbconfig,"select * from users where id='$id'");
 while ($row_result = mysqli_fetch_array($profile_content)){
-  $fname = $row_result['fname'];
-  $lname = $row_result['lname'];
-  $email = $row_result['email'];
   $nick = $row_result['nickname'];
-//  $skill = $row_result['sname'];
-  $dob = $row_result['dob'];
   $image = $row_result['picture'];
-}
-$profile_exp_info = mysqli_query($dbconfig,"select * from user_education where id ='$id'");
-while ($row = mysqli_fetch_array($profile_exp_info)){
-  $ptitle = $row['ptitle'];
-  $company = $row['company'];
-  $college = $row['college'];
-  $last_qual = $row['last_qual'];
-  $employment_project = $row['employment_project'];
-  $aboutme = $row['aboutme'];
-}
-$skill_info = mysqli_query($dbconfig,"select * from spossessed where id ='$id'");
-while ($row_skill = mysqli_fetch_array($skill_info)){
-  $sk[] = $row_skill ['sname'];
-  $skill=implode(",",$sk);
+  $email = $row_result['email'];
 }
 }else{
   header('location:error.php');
@@ -155,13 +137,13 @@ $(function() {
         </header>
 
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-          <a class="mdl-navigation__link" href="../index.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
+ <a class="mdl-navigation__link" href="../index.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
           <a class="mdl-navigation__link" href="profile.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">person</i>Profile</a>
           <a class="mdl-navigation__link" href="dashboard.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">dashboard</i>Dashboard</a>
           <a class="mdl-navigation__link" href="editprofile.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">edit</i>Edit Profile</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i>Activity</a>
+          <a class="mdl-navigation__link" href="compiler.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">new_releases</i>Online Compiler</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Forum</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Crew</a>
+          <a class="mdl-navigation__link" href="crew.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Crew</a>
           <div class="mdl-layout-spacer"></div>
           <a class="mdl-navigation__link" href="logout.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">exit_to_app</i><span >Logout</span></a>
         </nav>
@@ -182,25 +164,21 @@ $(function() {
                    <div class="input-field col s12">
                         <label for="last_name">Project Name</label>
                         <br>
-                     <input placeholder="Enter a meaningful name" name="pname" type="text" value="" required>
+                     <input placeholder="Enter a meaningful name" name="pname" id="pname" type="text" value="" required>
                    </div>
                    <div class="input-field col s12">
                         <label for="first_name">Project Description</label>
                         <br>
-                     <input placeholder="Say something about your project" name="nickname" type="text" value="" required>
+                     <input placeholder="Say something about your project" name="pdes" type="text" value="" required>
                    </div>
                    <div class="input-field col s12">
                         <label for="skills">Group Members (Minimum 3 Members | Maximum 5 Members)</label>
                         <br>
-                      
-                     <input style="width:130px" placeholder="Example: Mr. J" name="memberone" id="memberone" type="text" value=""required> <input style="width:130px" placeholder="Example: Harley Quin" name="membertwo" id="membertwo" type="text" value=""required>
-                     <input style="width:130px" placeholder="Example: El Diablo" name="memberthree" id="memberthree" type="text" value=""required> <input style="width:130px" placeholder="Example: El Diablo" name="memberfour" id="skills" type="text" value="">
-                     <input style="width:150px" placeholder="Example: Deadpool" name="memberfive" id="memberfive" type="text" value="">
+                     <input style="width:130px" placeholder="Example: Mr. J" name="member1" id="member1" type="text" value=""required> <input style="width:130px" placeholder="Example: Harley Quin" name="member2" id="member2" type="text" value=""required>
+                     <input style="width:130px" placeholder="Example: El Diablo" name="member3" id="member3" type="text" value=""required> <input style="width:130px" placeholder="Example: El Diablo" name="member4" id="member4" type="text" value="">
+                     <input style="width:150px" placeholder="Example: Deadpool" name="member5" id="member5" type="text" value="">
                    </div>
                    <div>
-                     <input type="file" style="display:none" name="image" id="file-5" class="inputfile inputfile-4" data-multiple-caption="{count} files selected" multiple />
-					           <label for="file-5"  ><figure  style="background-color:#73879C"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg></figure> <span style="color:#73879C">Upload Group Picture/Logo</span></label>
-                            <div style="margin-top:-50px" class="input-field col s12">
                                 <button class="btn cyan waves-effect waves-light right" type="submit" name="submit">Submit
                             </button>
                         </div>

@@ -276,6 +276,10 @@ span.psw {
                                    <td><input class="textboxform" type="password" placeholder="Enter Confirm Password" name="conpass" required></td>
                                  </tr>
                                  <tr>
+                                   <td style="width:50%;color:white" ><label><b>User Name</b></label></td>
+                                   <td><input class="textboxform" type="text" placeholder="User Name" name="nick" required></td>
+                                 </tr>
+                                 <tr>
                                    <td style="width:50%;color:white"><label><b>Country</b></label></td>
                                    <td>
                                      <select name="country" class="sel1" id="country" style="width:200px">

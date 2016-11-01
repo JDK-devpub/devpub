@@ -781,3 +781,84 @@
                 <h3>View options</h3>
                 
               </div>
+
+
+
+
+               $memberone = $_POST['memberone'];
+            $membertwo = $_POST['membertwo'];
+            $memberthree = $_POST['memberthree'];
+            $memberfour = $_POST['memberfour'];
+            $memberfive = $_POST['memberfive'];
+            //one
+            $sql_one="SELECT nickname FROM users WHERE nickname='$memberone'";
+            $result_one=mysqli_query($dbconfig,$sql_one);
+            $row_one=mysqli_fetch_array($result_one,MYSQLI_ASSOC);
+            if(mysqli_num_rows($result_one) == 1)
+            {
+                $one = $row_one['nickname'];
+            }
+            //two
+            $sql_two="SELECT nickname FROM users WHERE nickname='$membertwo'";
+            $result_two=mysqli_query($dbconfig,$sql_two);
+            $row_two=mysqli_fetch_array($result_two,MYSQLI_ASSOC);
+            if(mysqli_num_rows($result_two) == 1)
+            {
+                $two = $row_two['nickname'];
+            }
+            //three
+            $sql_three="SELECT nickname FROM users WHERE nickname='$memberthree'";
+            $result_three=mysqli_query($dbconfig,$sql_three);
+            $row_three=mysqli_fetch_array($result_three,MYSQLI_ASSOC);
+            if(mysqli_num_rows($result_three) == 1)
+            {
+                $three = $row_three['nickname'];
+            }
+            //four
+            $sql_four="SELECT nickname FROM users WHERE nickname='$memberfour'";
+            $result_four=mysqli_query($dbconfig,$sql_four);
+            $row_four=mysqli_fetch_array($result_four,MYSQLI_ASSOC);
+            if(mysqli_num_rows($result_four) == 1)
+            {
+                $four = $row_four['nickname'];
+            }
+            //five
+            $sql_five="SELECT nickname FROM users WHERE nickname='$memberfive'";
+            $result_five=mysqli_query($dbconfig,$sql_five);
+            $row_five=mysqli_fetch_array($result_five,MYSQLI_ASSOC);
+            if(mysqli_num_rows($result_five) == 1)
+            {
+                $five = $row_five['nickname'];
+            }
+
+
+
+
+
+
+
+            <div class="card">
+    <div class="footer">
+        <svg id="curve">
+            <path id="p" d="M0,200 Q80,100 400,200 V150 H0 V50" />
+            <!-- delay -->
+            <animate xlink:href="#p" attributeType="XML" attributeName="d" to="M0,200 Q80,100 400,200 V150 H0 V50" fill="freeze" begin="0s; bounce6.end" dur="0.15s" id="bounce0" />
+            <!-- slide up-->
+            <animate xlink:href="#p" attributeType="XML" attributeName="d" to="M0,50 Q80,100 400,50 V150 H0 V50" fill="freeze" begin="bounce0.end" dur="0.1s" id="bounce1" />
+            <!-- slide up and curve in -->
+            <animate xlink:href="#p" attributeType="XML" attributeName="d" to="M0,50 Q80,0 400,50 V150 H0 V50" fill="freeze" begin="bounce1.end" dur="0.15s" id="bounce2" />
+            <!-- slide down and curve in -->
+            <animate xlink:href="#p" attributeType="XML" attributeName="d" to="M0,50 Q80,80 400,50 V150 H0 V50" fill="freeze" begin="bounce2.end" dur="0.15s" id="bounce3" />
+            <!-- slide down and curve out -->
+            <animate xlink:href="#p" attributeType="XML" attributeName="d" to="M0,50 Q80,45 400,50 V150 H0 V50" fill="freeze" begin="bounce3.end" dur="0.1s" id="bounce4" />
+            <!-- curve in -->
+            <animate xlink:href="#p" attributeType="XML" attributeName="d" to="M0,50 Q80,50 400,50 V150 H0 V50" fill="freeze" begin="bounce4.end" dur="0.05s" id="bounce5" />
+            <!-- delay -->
+            <animate xlink:href="#p" attributeType="XML" attributeName="d" to="M0,50 Q80,50 400,50 V150 H0 V50" fill="freeze" begin="bounce5.end" dur="2.3s" id="bounce6" />
+        </svg>
+        <div class="info">
+            <div class="name">Filan Fisteku</div>
+            <div class="job">Architect Manager</div>
+        </div>
+    </div>
+    <div class="card-blur"></div>

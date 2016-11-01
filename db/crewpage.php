@@ -214,47 +214,25 @@ svg#curve {
           </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-          <a class="mdl-navigation__link" href="../index.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
+ <a class="mdl-navigation__link" href="../index.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
           <a class="mdl-navigation__link" href="profile.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">person</i>Profile</a>
           <a class="mdl-navigation__link" href="dashboard.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">dashboard</i>Dashboard</a>
           <a class="mdl-navigation__link" href="editprofile.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">edit</i>Edit Profile</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i>Activity</a>
+          <a class="mdl-navigation__link" href="compiler.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">new_releases</i>Online Compiler</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Forum</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Crew</a>
+          <a class="mdl-navigation__link" href="crew.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Crew</a>
           <div class="mdl-layout-spacer"></div>
           <a class="mdl-navigation__link" href="logout.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">exit_to_app</i><span >Logout</span></a>
         </nav>
       </div>
       <main class="mdl-layout__content mdl-color--grey-100">
       <!-- I have strarted from here -->
+      
       <table style="width:70%">
   <tr>
-    <th><div class="card">
-    <div class="footer">
-        <svg id="curve">
-            <path id="p" d="M0,200 Q80,100 400,200 V150 H0 V50" />
-            <!-- delay -->
-            <animate xlink:href="#p" attributeType="XML" attributeName="d" to="M0,200 Q80,100 400,200 V150 H0 V50" fill="freeze" begin="0s; bounce6.end" dur="0.15s" id="bounce0" />
-            <!-- slide up-->
-            <animate xlink:href="#p" attributeType="XML" attributeName="d" to="M0,50 Q80,100 400,50 V150 H0 V50" fill="freeze" begin="bounce0.end" dur="0.1s" id="bounce1" />
-            <!-- slide up and curve in -->
-            <animate xlink:href="#p" attributeType="XML" attributeName="d" to="M0,50 Q80,0 400,50 V150 H0 V50" fill="freeze" begin="bounce1.end" dur="0.15s" id="bounce2" />
-            <!-- slide down and curve in -->
-            <animate xlink:href="#p" attributeType="XML" attributeName="d" to="M0,50 Q80,80 400,50 V150 H0 V50" fill="freeze" begin="bounce2.end" dur="0.15s" id="bounce3" />
-            <!-- slide down and curve out -->
-            <animate xlink:href="#p" attributeType="XML" attributeName="d" to="M0,50 Q80,45 400,50 V150 H0 V50" fill="freeze" begin="bounce3.end" dur="0.1s" id="bounce4" />
-            <!-- curve in -->
-            <animate xlink:href="#p" attributeType="XML" attributeName="d" to="M0,50 Q80,50 400,50 V150 H0 V50" fill="freeze" begin="bounce4.end" dur="0.05s" id="bounce5" />
-            <!-- delay -->
-            <animate xlink:href="#p" attributeType="XML" attributeName="d" to="M0,50 Q80,50 400,50 V150 H0 V50" fill="freeze" begin="bounce5.end" dur="2.3s" id="bounce6" />
-        </svg>
-        <div class="info">
-            <div class="name">Filan Fisteku</div>
-            <div class="job">Architect Manager</div>
-        </div>
-    </div>
-    <div class="card-blur"></div></th>
-    
+    <th>
+   
+    </th> 
   </tr>
 </table>
     

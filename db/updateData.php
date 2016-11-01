@@ -8,6 +8,10 @@
 
     if(isset($_SESSION['globalID'])){
       $id = $_SESSION['globalID'];
+      $profile_content = mysqli_query($dbconfig,"select * from users where id='$id'");
+        while ($row_result = mysqli_fetch_array($profile_content)){
+          $nick = $row_result['nickname'];
+        }
       if (in_array(strtolower($filetype),$types))
       {
       	if($filesize <= 2000000)
@@ -17,8 +21,7 @@
             //Personal Profile
             $fname = $_POST["ufname"];
             $lname = $_POST["ulname"];
-            $nick = $_POST["nickname"];
-            $nickname = urlencode($nick);
+           // $nick = $_POST["nickname"];
             $skill = $_POST["skills"];
             $dob = $_POST["dob"];
             $pname = $_POST["pname"];
@@ -37,7 +40,7 @@
             $imagecontent= addslashes(file_get_contents($image));
 
             $sql_one = "UPDATE users
-            SET fname = '$fname', lname='$lname', nickname = '$nickname', dob ='$dob', picture= '$imagecontent'
+            SET fname = '$fname', lname='$lname', nickname = '$nick', dob ='$dob', picture= '$imagecontent'
             WHERE id = '$id'";
 
             $sql_two = "UPDATE user_education

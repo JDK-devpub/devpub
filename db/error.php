@@ -7,7 +7,7 @@
    <!--- basic page needs
    ================================================== -->
    <meta charset="utf-8">
-	<title>Quatro - Particles</title>
+	<title>DevPub</title>
 	<meta name="description" content="">  
 	<meta name="author" content="">
 
@@ -59,7 +59,7 @@
 			  		
 			  			<h1 class="kern-this">Error</h1>
 			  			<p>
-						Oooooops! Looks like you do not have permission
+						Oooooops! Looks like something went wrong
 			  			</p>   			
 			   	</div> <!-- /twelve --> 		   			
 		   	</div> <!-- /row -->    		 		

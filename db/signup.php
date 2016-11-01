@@ -10,6 +10,7 @@
         $conpass = $_POST["conpass"];
         $country = $_POST["country"];
         $gender = $_POST["radio"];
+        $nick = $_POST["nick"];
         //Dummy Data
         $ptitle = "No Information";
         $company = "No Information";
@@ -26,16 +27,19 @@
           $password = mysqli_real_escape_string($dbconfig, $password);
           $password = md5($password,TRUE);
 
-          $sql="SELECT email FROM users WHERE email='$email'";
+          $sql="SELECT email,nickname FROM users WHERE email='$email' or nickname='$nick'";
+
           $result=mysqli_query($dbconfig,$sql);
           $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
           if(mysqli_num_rows($result) == 1)
           {
-                echo "Email Exist";
+                echo "<script>
+                  alert('Email/User Name Exist');
+                </script>";
           }
           else
           {
-              $query = mysqli_query($dbconfig, "INSERT INTO users (fname,lname,email,pass,country,gender,picture)VALUES ('$fname','$lname','$email','$password','$country','$gender','$imagecontent')");
+              $query = mysqli_query($dbconfig, "INSERT INTO users (fname,lname,email,pass,country,nickname,gender,picture)VALUES ('$fname','$lname','$email','$password','$country','$nick','$gender','$imagecontent')");
               if ($query){
                 //header('location:../index.php');
                 $sql_reg = "SELECT id from users where email ='$email'";

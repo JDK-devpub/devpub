@@ -108,13 +108,13 @@ while ($row_result = mysqli_fetch_array($profile_content)){
           </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-          <a class="mdl-navigation__link" href="../index.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
+ <a class="mdl-navigation__link" href="../index.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
           <a class="mdl-navigation__link" href="profile.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">person</i>Profile</a>
           <a class="mdl-navigation__link" href="dashboard.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">dashboard</i>Dashboard</a>
           <a class="mdl-navigation__link" href="editprofile.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">edit</i>Edit Profile</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i>Activity</a>
+          <a class="mdl-navigation__link" href="compiler.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">new_releases</i>Online Compiler</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Forum</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Crew</a>
+          <a class="mdl-navigation__link" href="crew.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Crew</a>
           <div class="mdl-layout-spacer"></div>
           <a class="mdl-navigation__link" href="logout.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">exit_to_app</i><span >Logout</span></a>
         </nav>
@@ -131,10 +131,14 @@ while ($row_result = mysqli_fetch_array($profile_content)){
                 <h2 class="mdl-card__title-text">Choose Crew</h2>
               </div>
               <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                Non dolore elit adipisicing ea reprehenderit consectetur culpa.
+                           //////////////////////////////
+                           ////////////////////////////////
+                           /////////////////////////////
+                           //////////////////////
+                           //////////////////////////////
               </div>
               <div class="mdl-card__actions mdl-card--border">
-                <a href="crewreg.php" class="mdl-button mdl-js-button mdl-js-ripple-effect">Step In!</a>     <a href="crewpage.php" class="mdl-button mdl-js-button mdl-js-ripple-effect">Create New!</a>
+                <a href="crewpage.php" class="mdl-button mdl-js-button mdl-js-ripple-effect">Step In!</a>     <a href="crewreg.php" class="mdl-button mdl-js-button mdl-js-ripple-effect">Create New!</a>
               </div>
             </div>
             
