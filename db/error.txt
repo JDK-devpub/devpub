@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 main.c:1:1: error: expected '=', ',', ';', 'asm' or '__attribute__' at end of input
  sdsadasd
  ^
+=======
+'gcc' is not recognized as an internal or external command,
+operable program or batch file.
+>>>>>>> 23fc5efefabc0cf0961eda6375428de9759a32db

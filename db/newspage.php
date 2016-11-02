@@ -217,7 +217,7 @@ span.psw {
                 <form class="modal-content animate" method="post" action="login.php">
                   <div class="container">
                     <div class="newsforms" style="float:center">
-                      <div style="width:70%">
+                      <div style="margin-left:50px">
                         <br><br>
                           <table>
                              <tr>
@@ -230,11 +230,11 @@ span.psw {
                              </tr>
                           </table>
                       </div>
-                    <button class="loginbtn" style="float:left;margin-left:100px" name="submit" type="submit" onclick="hideStuff('signup_id', 'login_id')">Login</button>
+                    <button class="loginbtn" style="float:left;margin-left:125px" name="submit" type="submit" onclick="hideStuff('signup_id', 'login_id')">Login</button>
                  </div>
                   </div>
                   <div class="container" style="background-color: #37474f;width:70%">
-                    <button type="button" style="float:left" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                    <button type="button" style="float:center" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
                   </div>
                 </form>
            </div>
@@ -272,17 +272,17 @@ span.psw {
                    <div id="id02" class="modal">
                     <form class="modal-content animate" method="post" action="signup.php">
                       <div class="container">
-                        <div class="newsforms" style="float:center;margin-left:100px" !important>
-                          <div style="width:70%">
+                        <div class="newsforms" style="float:center;" !important>
+                          <div style="width:30%">
                             <br><br>
                               <table>
                                  <tr>
                                    <td style="width:50%;color:white" ><label><b>First Name</b></label></td>
-                                   <td><input class="textboxform" type="text" placeholder="Enter First Name" name="fname" required></td>
+                                   <td><input pattern=".{5,}" required title="5 characters minimum" class="textboxform" type="text" placeholder="Enter First Name" name="fname" required></td>
                                  </tr>
                                  <tr>
                                    <td style="width:50%;color:white" ><label><b>Last Name</b></label></td>
-                                   <td><input class="textboxform" type="text" placeholder="Enter Last Name" name="lname" required></td>
+                                   <td><input pattern=".{5,}" required title="5 characters minimum" class="textboxform" type="text" placeholder="Enter Last Name" name="lname" required></td>
                                  </tr>
                                  <tr>
                                    <td style="width:50%;color:white" ><label><b>Email</b></label></td>
@@ -290,15 +290,15 @@ span.psw {
                                  </tr>
                                  <tr>
                                    <td style="width:50%;color:white" ><label><b>Password</b></label></td>
-                                   <td><input class="textboxform" type="password" placeholder="Enter Password" name="password" required></td>
+                                   <td><input pattern=".{5,}" required title="5 characters minimum" class="textboxform" type="password" placeholder="Enter Password" name="password" required></td>
                                  </tr>
                                  <tr>
                                    <td style="width:50%;color:white" ><label><b>Confirm Password</b></label></td>
-                                   <td><input class="textboxform" type="password" placeholder="Enter Confirm Password" name="conpass" required></td>
+                                   <td><input pattern=".{5,}" required title="5 characters minimum" class="textboxform" type="password" placeholder="Enter Confirm Password" name="conpass" required></td>
                                  </tr>
                                   <tr>
                                    <td style="width:50%;color:white" ><label><b>User Name</b></label></td>
-                                   <td><input class="textboxform" type="text" placeholder="User Name" name="nick" required></td>
+                                   <td><input pattern=".{5,}" required title="5 characters minimum" class="textboxform" type="text" placeholder="User Name" name="nick" required></td>
                                  </tr>
                                  <tr>
                                    <td style="width:50%;color:white"><label><b>Country</b></label></td>
@@ -565,7 +565,7 @@ span.psw {
                               </table>
                               <br>
                           </div>
-                            <button id="signupjs"  style="float:left;margin-left:210px"name ="submit" class="loginbtn" type="submit" !important>Sign Up</button>
+                            <button id="signupjs"  style="float:left;margin-left:125px"name ="submit" class="loginbtn" type="submit" !important>Sign Up</button>
                         </div>
                       </div>
                       <div class="container" style="background-color: #37474f;width:70%">

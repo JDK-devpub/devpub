@@ -144,7 +144,11 @@ while ($row_result = mysqli_fetch_array($profile_content)){
                                                                                                     ON gm.group_id = gw.group_id
                                                                                                     JOIN users u
                                                                                                     ON u.id = gm.member_id
+<<<<<<< HEAD
                                                                                                     where gw.leader_id ='.$id.'
+=======
+                                                                                                    where gw.leader_id =9
+>>>>>>> 23fc5efefabc0cf0961eda6375428de9759a32db
                                                                                                   ORDER BY u.nickname');
                  echo '<table>';
                  echo '<tr>';
@@ -155,18 +159,42 @@ while ($row_result = mysqli_fetch_array($profile_content)){
                         $user = $row_result['nickname'];
 
                         //contents starts here
+<<<<<<< HEAD
                             echo '<td style="padding-left:60px;padding-top:50px"><img style = "border-radius: 50%;width:150px;height:150px" src="data:image/jpeg;base64,'.base64_encode($pic).'" alt=""><div class="name">'.$first.'<br>'.$user.'</div></td>';
+=======
+                            echo '<td style="padding-left:60px;padding-top:50px;text-align:center"><img style = "border-radius: 50%;width:150px;height:150px" src="data:image/jpeg;base64,'.base64_encode($pic).'" alt=""><div class="name">'.$first.'<br>'.$user.'</div></td>';
+>>>>>>> 23fc5efefabc0cf0961eda6375428de9759a32db
                            // echo '<td><div class="name">'.$first.'<br>'.$user.'</div></td>';
                            // echo '<td><div class="job">'.$user.'</div></td>';
                         //contents end here
                 }
                 echo '</tr>';
                 echo '</table>';
+<<<<<<< HEAD
+=======
+
+                $group_info = mysqli_query($dbconfig,'SELECT project_name,project_description from project p JOIN group_work gw ON p.project_id = gw.ongoing_project where gw.leader_id = 9');
+                echo '<table>';
+                echo '<td style="text-align:center">';
+                while ($row_project = mysqli_fetch_array($group_info)){
+                      $projectname = $row_project['project_name'];
+                      $projectdes = $row_project['project_description'];
+                      echo '<br><div style="">';
+                      echo '<h1 style="color:lightgreen;">'.$projectname.'</h1>';
+                      echo '<p style="text-align:justify;padding-left:150px;padding-right:150px">'.$projectdes.'</p><br>';
+                      echo '</div>';
+                }
+
+>>>>>>> 23fc5efefabc0cf0961eda6375428de9759a32db
             }else{
                 header('location:error.php');
             }
       ?>
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 23fc5efefabc0cf0961eda6375428de9759a32db
           <!-- Finished here -->
       </main>
     </div>

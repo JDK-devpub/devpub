@@ -178,17 +178,17 @@ $(function() {
                    <div class="input-field col s12">
                         <label for="first_name">Firstname</label>
                         <br>
-                     <input placeholder="FirstName" name="ufname" type="text" value="<?php echo "$fname"; ?>" required>
+                     <input pattern=".{5,}" required title="5 characters minimum" placeholder="FirstName" name="ufname" type="text" value="<?php echo "$fname"; ?>" required>
                    </div>
                    <div class="input-field col s12">
                         <label for="last_name">Lastname</label>
                         <br>
-                     <input placeholder="John Doe" name="ulname" type="text" value="<?php echo "$lname"; ?>" required>
+                     <input pattern=".{5,}" required title="5 characters minimum" placeholder="John Doe" name="ulname" type="text" value="<?php echo "$lname"; ?>" required>
                    </div>
                    <div class="input-field col s12">
                         <label for="skills">Skills</label>
                         <br>
-                      
+
                      <input placeholder="Type skill 1,skill 2,..." name="skills" id="skills" type="text" value="<?php
                      if(!empty($skill))
                      {
@@ -227,26 +227,26 @@ $(function() {
                   <div class="input-field col s12">
                        <label for="last_name">Company Name</label>
                        <br>
-                    <input placeholder="Company Name" name="cname" type="text" value="<?php echo urldecode($company); ?>">
+                    <input pattern=".{3,}" required title="3 characters minimum" placeholder="Company Name" name="cname" type="text" value="<?php echo urldecode($company); ?>">
                   </div>
                   <div class="input-field col s12">
                        <label for="first_name">College or University name</label>
                        <br>
-                    <input placeholder="College Or University Name" name="college" type="text" value="<?php echo urldecode($college); ?>">
+                    <input pattern=".{5,}" required title="5 characters minimum" placeholder="College Or University Name" name="college" type="text" value="<?php echo urldecode($college); ?>">
                   </div>
                   <div class="input-field col s12">
                        <label for="qualifications">Last Educational Qualification</label>
                        <br>
-                    <input placeholder="Type skill 1,skill 2" name="quali" type="text" value="<?php echo urldecode($last_qual); ?>">
+                    <input pattern=".{3,}" required title="3 characters minimum" placeholder="Type skill 1,skill 2" name="quali" type="text" value="<?php echo urldecode($last_qual); ?>">
                   </div>
                   <div class="input-field col s12">
                        <label for="first_name">Employment Projects</label>
                        <br>
-                    <input placeholder="Company Projects" name="eproject" type="text" value="<?php echo urldecode($employment_project); ?>">
+                    <input pattern=".{5,}" required title="5 characters minimum" placeholder="Company Projects" name="eproject" type="text" value="<?php echo urldecode($employment_project); ?>">
                   </div>
                   <div class="input-field col s12">
                     <br>
-                            <textarea placeholder="Enter About your self" name="text" class="materialize-textarea" ><?php echo $aboutme; ?></textarea>
+                            <textarea pattern=".{50,}" required title="50 characters minimum" placeholder="Enter About your self" name="text" class="materialize-textarea" ><?php echo $aboutme; ?></textarea>
                             <label for="message">Bio</label>
                   </div>
                   <div class="row" style="margin-right:50px;margin-top:10px">

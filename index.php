@@ -261,11 +261,11 @@ span.psw {
                               <table>
                                  <tr>
                                    <td style="width:50%;color:white" ><label><b>First Name</b></label></td>
-                                   <td><input class="textboxform" type="text" placeholder="Enter First Name" name="fname" required></td>
+                                   <td><input pattern=".{5,}" required title="5 characters minimum" class="textboxform" type="text" placeholder="Enter First Name" name="fname" required></td>
                                  </tr>
                                  <tr>
                                    <td style="width:50%;color:white" ><label><b>Last Name</b></label></td>
-                                   <td><input class="textboxform" type="text" placeholder="Enter Last Name" name="lname" required></td>
+                                   <td><input pattern=".{3,}" required title="3 characters minimum"class="textboxform" type="text" placeholder="Enter Last Name" name="lname" required></td>
                                  </tr>
                                  <tr>
                                    <td style="width:50%;color:white" ><label><b>Email</b></label></td>
@@ -273,11 +273,11 @@ span.psw {
                                  </tr>
                                  <tr>
                                    <td style="width:50%;color:white" ><label><b>Password</b></label></td>
-                                   <td><input class="textboxform" type="password" placeholder="Enter Password" name="password" required></td>
+                                   <td><input pattern=".{5,}" required title="5 characters minimum" class="textboxform" type="password" placeholder="Enter Password" name="password" required></td>
                                  </tr>
                                  <tr>
                                    <td style="width:50%;color:white" ><label><b>Confirm Password</b></label></td>
-                                   <td><input class="textboxform" type="password" placeholder="Enter Confirm Password" name="conpass" required></td>
+                                   <td><input pattern=".{5,}" required title="5 characters minimum" class="textboxform" type="password" placeholder="Enter Confirm Password" name="conpass" required></td>
                                  </tr>
                                  <tr>
                                    <td style="width:50%;color:white"><label><b>Country</b></label></td>

@@ -1,7 +1,7 @@
 <?php
-
+session_start();
 	$languageID=$_POST["language"];
-	
+
 		switch($languageID)
 			{
 				case "c":
@@ -27,10 +27,10 @@
 					break;
 				}
 				case "java":
-				{	
+				{
 					include("./compilers/java.php");
 					break;
 				}
-			
+
 			}
 ?>

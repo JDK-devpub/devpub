@@ -38,8 +38,16 @@
 				<script type="text/javascript" src="./plugin/addon/fold/comment-fold.js"></script>
 				<script type="text/javascript" src="./plugin/mode/xml/xml.js"></script>
 				<script type="text/javascript">
+<<<<<<< HEAD
 
 
+=======
+						 window.onload = function() {
+							CodeMirror.commands.autocomplete = function(cm) {
+								CodeMirror.showHint(cm, CodeMirror.hint.javascript);
+						}
+          }
+>>>>>>> 23fc5efefabc0cf0961eda6375428de9759a32db
 				</script>
   <title>Devpub Compiler</title>
   <style>
@@ -61,6 +69,7 @@
 					<br />
 					<strong>Enter Your code here:<br/></strong>
 
+<<<<<<< HEAD
                     <textarea class="codemirror-textarea" name="code" id="code" onkeydown=insertTab(this,event) ></textarea>
 
 					<span id="errorCode" class="error"></span><br/><br/>
@@ -97,6 +106,31 @@
         </div>
         <div class="modal-body">
           <p><?php echo $_GET['result'];?></p>
+=======
+                    <textarea class="codemirror-textarea" name="code" onkeydown=insertTab(this,event) id="code"></textarea>
+
+					<span id="errorCode" class="error"></span><br/><br/>
+                    <strong>Sample Input please:<br/></strong>
+					<textarea style="width:100%" name="input" rows=7 cols=100 id="input"></textarea><br/><br/>
+					<input style="margin-left:600px;" type="submit" class="btn btn-info btn-lg" data-target="#myModal" value="Execute" id="submit">
+					<input style="margin-left:600px" type="reset" class="btn btn-info btn-lg" value="Reset"><br/>
+
+
+  <input type="button" class="btn btn-info btn-lg" value="Open Modal" data-toggle="modal" data-target="#myModal">
+
+  <!-- Modal -->
+  <div class="modal fade"  id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+>>>>>>> 23fc5efefabc0cf0961eda6375428de9759a32db
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -106,6 +140,7 @@
     </div>
   </div>
 
+<<<<<<< HEAD
 <script>
 document.getElementById('submit').addEventListener("click", showpop);
 
@@ -118,6 +153,10 @@ function showpop(){
 }
 </script>
 </form>
+=======
+
+				</form>
+>>>>>>> 23fc5efefabc0cf0961eda6375428de9759a32db
 				<!-- javascript -->
 
 
