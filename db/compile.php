@@ -23,6 +23,7 @@
 				case "cpp":
 				{
 					include("./compilers/cpp.php");
+					//echo $output;
 					break;
 				}
 				case "java":

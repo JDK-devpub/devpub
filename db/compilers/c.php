@@ -37,11 +37,12 @@ echo "Output";
 			$out=$out." < ".$filename_in;
 			$output=shell_exec($out);
 		}
-		echo "<pre>$output</pre>";
+		//echo "<pre>$output</pre>";
+		header('location:compiler.php?result='.$output);
 	}
 	else if(!strpos($error,"error"))
 	{
-		echo "<pre>$error</pre>";
+		//echo "<pre>$error</pre>";
 		if(trim($input)=="")
 		{
 			$output=shell_exec($out);
@@ -51,11 +52,13 @@ echo "Output";
 			$out=$out." < ".$filename_in;
 			$output=shell_exec($out);
 		}
-		echo "<pre>$output</pre>";
+		//echo "<pre>$output</pre>";
+		header('location:compiler.php?result='.$output);
 	}
 	else
 	{
-		echo "<pre>$error</pre>";
+		//echo "<pre>$error</pre>";
+		header('location:compiler.php?result='.$error);
 	}
 	exec("rm $filename_code");
 	exec("rm *.o");
