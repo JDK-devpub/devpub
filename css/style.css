@@ -15,6 +15,7 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: 1500px;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -219,4 +220,17 @@ main .plate {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   z-index: -1;
+}
+
+
+.demo-card-wide.mdl-card {
+  width: 512px;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url('../assets/demos/welcome_card.jpg') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
 }

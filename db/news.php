@@ -615,7 +615,7 @@ span.psw {
                           echo ' <section class="news-text-block" style="margin:auto;height:600px;width:605px" !important> ';
                           echo ' <div class="demo-card-wide mdl-card mdl-shadow--2dp" style="width:650px;height:500px"> ';
                           echo ' <div class="card-image"> ';
-                          echo ' <img style = "height:370px;width:700px" src="data:image/jpeg;base64,'.base64_encode($news_image).'">';
+                          echo ' <img style = "height:340px;width:700px" src="data:image/jpeg;base64,'.base64_encode($news_image).'">';
                           echo ' <span class="card-title" style="margin:auto;color:black;font-size:20px;font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;">'.$news_title.'</span> ';
                           echo ' </div>';
                           echo ' <div class="card light-white" style="float:right;width:605px;height:150px">';

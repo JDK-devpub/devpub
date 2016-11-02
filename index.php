@@ -161,21 +161,25 @@ span.psw {
     </script>
   </head>
   <body>
+
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
       <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
           <span class="android-title mdl-layout-title">
-            <img class="android-logo-image" src="images/android-logo.png">
+            <img class="android-logo-image" src="images/android-logo.png" href="index.php">
           </span>
           <!-- Add spacer, to align navigation to the right in desktop -->
           <div class="android-header-spacer mdl-layout-spacer"></div>
           <div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
-            <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
+            <label style="margin-top:10px" class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
               <i name="search_query" class="material-icons">search</i>
             </label>
             <div class="mdl-textfield__expandable-holder">
-              <input class="mdl-textfield__input" type="text" id="search-field">
+              <form name ="search_form" method = "post" action ="searchresult.php">
+              <input class="mdl-textfield__input" name="search1" type="text" id="search-field">
+              <input style="display:none" class="mdl-button mdl-button--raised mdl-button--colored" type="submit" title="Submit">
+            </form>
             </div>
           </div>
           <!-- Navigation -->
@@ -184,10 +188,10 @@ span.psw {
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#id02" id="signup_id" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">SignUp</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#id01" id="login_id"  onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="./db/dashboard.php" id="dash_id" style="display:none" >Dashboard</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Forum</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="./db/forum/index.php">Forum</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="./db/news.php">News</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Market</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="./db/jobs.php" id"jobs_id" style="display:block">Jobs</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="newspage.php">Market</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="jobs.php" id"jobs_id" style="display:block">Jobs</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="./db/logout.php" id="exit_id" style="display:none">Logout</a>
             </nav>
           </div>
@@ -274,10 +278,6 @@ span.psw {
                                  <tr>
                                    <td style="width:50%;color:white" ><label><b>Confirm Password</b></label></td>
                                    <td><input class="textboxform" type="password" placeholder="Enter Confirm Password" name="conpass" required></td>
-                                 </tr>
-                                 <tr>
-                                   <td style="width:50%;color:white" ><label><b>User Name</b></label></td>
-                                   <td><input class="textboxform" type="text" placeholder="User Name" name="nick" required></td>
                                  </tr>
                                  <tr>
                                    <td style="width:50%;color:white"><label><b>Country</b></label></td>
@@ -782,6 +782,7 @@ span.psw {
             <a class="android-link mdl-typography--font-light" href="" color="white" >contact Us</a>
             <a class="android-link mdl-typography--font-light" href="" color="white" >Privacy Policy</a>
           </div>
+
         </footer>
       </div>
     </div>
