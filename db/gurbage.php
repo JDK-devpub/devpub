@@ -833,7 +833,15 @@
 
 
 
-
+ <div class="card">
+            <img src="data:image/jpeg;base64,http://s8.postimg.org/jqyxb0291/card.png" alt="">
+            <div class="footer">
+                <div class="info">
+                    <div class="name">Filan Fisteku</div>
+                    <div class="job">Architect Manager</div>
+                </div>
+            </div>  
+         <div class="card-blur"></div>
 
 
 
@@ -862,3 +870,39 @@
         </div>
     </div>
     <div class="card-blur"></div>
+
+
+
+
+
+          <?php
+            if(isset($_SESSION['globalID'])) {
+                $id = $_SESSION['globalID'];
+                $group_content = mysqli_query($dbconfig,'SELECT u.fname,u.lname,u.picture,u.nickname from group_members gm JOIN group_work gw
+                                                                                                    ON gm.group_id = gw.group_id
+                                                                                                    JOIN users u
+                                                                                                    ON u.id = gm.member_id
+                                                                                                    where gw.leader_id ='.$id.'
+                                                                                                    ORDER BY u.nickname');
+                while ($row_result = mysqli_fetch_array($group_content)){
+                        $first = $row_result['fname'];
+                        $last = $row_result['lname'];
+                        $pic = $row_result['picture'];
+                        $user = $row_result['nickname'];
+
+                        echo '<table style="width:70%">';
+                        echo '<tr>';
+                        echo '<th>';
+                        //contents starts here
+
+                        //contents end here
+                        echo '</th>';
+                        echo '</tr>';
+                        echo '</table>';
+                }
+            }else{
+                header('location:error.php');
+            }
+      ?>
+      
+  
