@@ -266,11 +266,11 @@ span.psw {
                               <table>
                                  <tr>
                                    <td style="width:50%;color:white" ><label><b>First Name</b></label></td>
-                                   <td><input class="textboxform" type="text" placeholder="Enter First Name" name="fname" required></td>
+                                   <td><input pattern=".{5,}" required title="5 characters minimum" class="textboxform" type="text" placeholder="Enter First Name" name="fname" required></td>
                                  </tr>
                                  <tr>
                                    <td style="width:50%;color:white" ><label><b>Last Name</b></label></td>
-                                   <td><input class="textboxform" type="text" placeholder="Enter Last Name" name="lname" required></td>
+                                   <td><input pattern=".{5,}" required title="5 characters minimum" class="textboxform" type="text" placeholder="Enter Last Name" name="lname" required></td>
                                  </tr>
                                  <tr>
                                    <td style="width:50%;color:white" ><label><b>Email</b></label></td>
@@ -278,15 +278,15 @@ span.psw {
                                  </tr>
                                  <tr>
                                    <td style="width:50%;color:white" ><label><b>Password</b></label></td>
-                                   <td><input class="textboxform" type="password" placeholder="Enter Password" name="password" required></td>
+                                   <td><input pattern=".{5,}" required title="5 characters minimum" class="textboxform" type="password" placeholder="Enter Password" name="password" required></td>
                                  </tr>
                                  <tr>
                                    <td style="width:50%;color:white" ><label><b>Confirm Password</b></label></td>
-                                   <td><input class="textboxform" type="password" placeholder="Enter Confirm Password" name="conpass" required></td>
+                                   <td><input pattern=".{5,}" required title="5 characters minimum" class="textboxform" type="password" placeholder="Enter Confirm Password" name="conpass" required></td>
                                  </tr>
                                   <tr>
                                    <td style="width:50%;color:white" ><label><b>User Name</b></label></td>
-                                   <td><input class="textboxform" type="text" placeholder="User Name" name="nick" required></td>
+                                   <td><input pattern=".{5,}" required title="5 characters minimum" class="textboxform" type="text" placeholder="User Name" name="nick" required></td>
                                  </tr>
                                  <tr>
                                    <td style="width:50%;color:white"><label><b>Country</b></label></td>
@@ -620,7 +620,7 @@ span.psw {
                           echo ' </div>';
                           echo ' <div class="card light-white" style="float:right;width:605px;height:150px">';
                           echo ' <div class="card-content black-text">';
-                          echo ' <span class="card-title" style="color:grey;">'.$news_short_description.'</span>';
+                          echo ' <span class="card-title" style="color:grey;text-align:justify">'.$news_short_description.'</span>';
                           echo ' <p style="margin-left:350px"> Author : '.$news_author.' - ' .$news_published_on. '</p>';
                           echo ' <div class="mdl-card__actions mdl-card--border">';
                           echo ' <a style="float:right" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="./newspage.php?news_id='.$news_id.'">Go to link</a>';

@@ -1,6 +1,7 @@
 <?php
 
-?>
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +15,9 @@
   <link rel="stylesheet" type="text/css" href="./plugin/addon/fold/foldgutter.css">
   <link rel="stylesheet" type="text/css" href="./plugin/addon/display/fullscreen.css">
   <link rel="stylesheet" type="text/css" href="./plugin/doc/docs.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 				<script type="text/javascript" src="./plugin/addon/display/fullscreen.js"></script>
 				<script type="text/javascript" src="./plugin/addon/wrap/hardwrap.js"></script>
@@ -37,7 +41,8 @@
 						 window.onload = function() {
 							CodeMirror.commands.autocomplete = function(cm) {
 								CodeMirror.showHint(cm, CodeMirror.hint.javascript);
-						};
+						}
+          }
 				</script>
   <title>Devpub Compiler</title>
   <style>
@@ -58,17 +63,43 @@
 						</select>
 					<br />
 					<strong>Enter Your code here:<br/></strong>
-                    
+
                     <textarea class="codemirror-textarea" name="code" onkeydown=insertTab(this,event) id="code"></textarea>
-                    
+
 					<span id="errorCode" class="error"></span><br/><br/>
                     <strong>Sample Input please:<br/></strong>
 					<textarea style="width:100%" name="input" rows=7 cols=100 id="input"></textarea><br/><br/>
-					<input style="margin-left:600px;" type="submit" value="Execute" id="submit">
-					<input style="margin-left:600px" type="reset" value="Reset"><br/>
-                  
+					<input style="margin-left:600px;" type="submit" class="btn btn-info btn-lg" data-target="#myModal" value="Execute" id="submit">
+					<input style="margin-left:600px" type="reset" class="btn btn-info btn-lg" value="Reset"><br/>
+
+
+  <input type="button" class="btn btn-info btn-lg" value="Open Modal" data-toggle="modal" data-target="#myModal">
+
+  <!-- Modal -->
+  <div class="modal fade"  id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
 				</form>
 				<!-- javascript -->
-				
+
+
 </body>
 </html>

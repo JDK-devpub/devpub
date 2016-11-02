@@ -67,102 +67,10 @@ while ($row_result = mysqli_fetch_array($profile_content)){
    <link href="bootstrap/custom.min.css" rel="stylesheet">
     <style>
         /*Julfikar Starts*/
-.card {
-    position: absolute;
-    height: 250px;
-    width: 250px;
-    margin-top:50px;
-    margin-left:50px;
-    background-image: url(http://s8.postimg.org/jqyxb0291/card.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    box-shadow: 0 0 80px -10px black;
-    overflow: hidden;
-}
-
-.card-blur {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: black;
-    animation: ease-in 3s brightness infinite;
-}
-
-@keyframes brightness {
-    0% {
-        opacity: 0;
-    }
-    10% {
-        opacity: 0.6;
-    }
-    100% {
-        opacity: 0.6;
-    }
-}
-
-.footer {
-    z-index: 1;
-    position: absolute;
-    height: 80px;
-    width: 100%;
-    bottom: 0;
-}
-
-svg#curve {
-    position: absolute;
-    fill: white;
-    left: 0;
-    bottom: 0;
-    width: 400px;
-    height: 150px;
-}
-
-.connections {
-    height: 80px;
-    width: 400px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 100px;
-    margin: auto;
-    padding-left:30px;
-}
-
-.connection {
-    height: 25px;
-    width: 25px;
-    border-radius: 100%;
-    background-color: white;
-    display: inline-block;
-    padding: 5px;
-    margin-right: 25px;
-    transform: translateY(200px);
-    
-    animation: cubic-bezier(.46, 1.48, .18, .81) slideup 3s infinite;
-}
-
-@keyframes slideup {
-    0% {
-        transform: translateY(250px);
-    }
-    2% {
-        transform: translateY(250px);
-    }
-    30% {
-        transform: translateY(0px);
-    }
-    96% {
-        transform: translateY(0px);
-    }
-    100% {
-        transform: translateY(200px);
-    }
-}
-
 .name {
-    color: white;
+    color: grey;
     font-weight: bolder;
+    font-size: 15px;
     padding-top: 5px;
     padding-left:30px;
 }
@@ -170,6 +78,7 @@ svg#curve {
 .job {
     margin-top: 10px;
     padding-left:30px;
+    font-style: italic;
 }
     /*Julfikar Ends*/
     body {
@@ -227,15 +136,50 @@ svg#curve {
       </div>
       <main class="mdl-layout__content mdl-color--grey-100">
       <!-- I have strarted from here -->
-      
-      <table style="width:70%">
-  <tr>
-    <th>
-   
-    </th> 
-  </tr>
-</table>
-    
+
+            <?php
+            if(isset($_SESSION['globalID'])) {
+                $id = $_SESSION['globalID'];
+                $group_content = mysqli_query($dbconfig,'SELECT u.fname,u.lname,u.picture,u.nickname from group_members gm JOIN group_work gw
+                                                                                                    ON gm.group_id = gw.group_id
+                                                                                                    JOIN users u
+                                                                                                    ON u.id = gm.member_id
+                                                                                                    where gw.leader_id =9
+                                                                                                  ORDER BY u.nickname');
+                 echo '<table>';
+                 echo '<tr>';
+                 while ($row_result = mysqli_fetch_array($group_content)){
+                        $first = $row_result['fname'];
+                        $last = $row_result['lname'];
+                        $pic = $row_result['picture'];
+                        $user = $row_result['nickname'];
+
+                        //contents starts here
+                            echo '<td style="padding-left:60px;padding-top:50px;text-align:center"><img style = "border-radius: 50%;width:150px;height:150px" src="data:image/jpeg;base64,'.base64_encode($pic).'" alt=""><div class="name">'.$first.'<br>'.$user.'</div></td>';
+                           // echo '<td><div class="name">'.$first.'<br>'.$user.'</div></td>';
+                           // echo '<td><div class="job">'.$user.'</div></td>';
+                        //contents end here
+                }
+                echo '</tr>';
+                echo '</table>';
+
+                $group_info = mysqli_query($dbconfig,'SELECT project_name,project_description from project p JOIN group_work gw ON p.project_id = gw.ongoing_project where gw.leader_id = 9');
+                echo '<table>';
+                echo '<td style="text-align:center">';
+                while ($row_project = mysqli_fetch_array($group_info)){
+                      $projectname = $row_project['project_name'];
+                      $projectdes = $row_project['project_description'];
+                      echo '<br><div style="">';
+                      echo '<h1 style="color:lightgreen;">'.$projectname.'</h1>';
+                      echo '<p style="text-align:justify;padding-left:150px;padding-right:150px">'.$projectdes.'</p><br>';
+                      echo '</div>';
+                }
+
+            }else{
+                header('location:error.php');
+            }
+      ?>
+
           <!-- Finished here -->
       </main>
     </div>
