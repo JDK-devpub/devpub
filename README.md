@@ -1,8 +1,7 @@
 # Project Name : Developer's Pub
-                                ---------------------CSCI-318 Assignment---------------------
+                               ---------------------CSCI-318 Assignment---------------------
                                                           
-                                                    </> David Tanugrah
-                                                    </> Hsiao Qin
-                                                    </> Kuhandran SamudraPandiyan
-                                                    </> Mohmmad Julfikar Mahmud
-                                                    </> Teo Shinjiat
+                                                   </> David Tanugrah [Backend]
+                                                   </> Kuhandran SamudraPandiyan [Frontend]
+                                                   </> Mohmmad Julfikar Mahmud [Backend]
+                                                   </> Teo Shinjiat [Backend]
